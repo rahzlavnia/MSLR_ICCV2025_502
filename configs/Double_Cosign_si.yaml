@@ -15,6 +15,7 @@ dataset: mslr_iccv_si
 num_worker: 10
 feeder_args:
   setting: si
+  fs: si_2
   datatype: skeleton
   split: &split [25, 46, 67, 86]
   norm_point: [0, 25, 46, 67]
@@ -43,14 +44,6 @@ model_args:
     CR_SeqCTC_static: 1.0
     CR_Conv_static: 2.0
     CR_Seq_static: 2.0
-    CR_ConvCTC_motion: 1.0
-    CR_SeqCTC_motion: 1.0
-    CR_Conv_motion: 2.0
-    CR_Seq_motion: 2.0
-    CR_ConvCTC_fusion: 1.0
-    CR_SeqCTC_fusion: 1.0
-    CR_Conv_fusion: 2.0
-    CR_Seq_fusion: 2.0
   norm_scale: 32
 
 # optim args

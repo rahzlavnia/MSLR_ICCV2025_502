@@ -37,20 +37,12 @@ model_args:
     CR_args:
       clip_length: 25
       ratio: 0.2
-  conv_type: K3-P2-K3-P2
+  conv_type: K5-P2-K5-P2
   loss_weights:
     CR_ConvCTC_static: 1.0
     CR_SeqCTC_static: 1.0
     CR_Conv_static: 2.0
     CR_Seq_static: 2.0
-    CR_ConvCTC_motion: 1.0
-    CR_SeqCTC_motion: 1.0
-    CR_Conv_motion: 2.0
-    CR_Seq_motion: 2.0
-    CR_ConvCTC_fusion: 1.0
-    CR_SeqCTC_fusion: 1.0
-    CR_Conv_fusion: 2.0
-    CR_Seq_fusion: 2.0
   norm_scale: 32
 
 # optim args

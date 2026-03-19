@@ -31,6 +31,7 @@ class SkeletonFeeder(data.Dataset):
         split=None,
         norm_point=None,
         used_part=None,
+        fs='si_0',
     ):
         self.mode = mode
         self.mode_list = mode.split("_")
@@ -41,10 +42,20 @@ class SkeletonFeeder(data.Dataset):
         self.dataset = dataset
         self.used_part = used_part
         if mode == 'test':
-            with open(f"./datasets/pose_data_isharah1000_{self.setting.upper()}_test.pkl", "rb") as f:
+            with open(f"./datasets/pose_data_isharah2000_hands_lips_body_phase2_{self.setting.upper()}.pkl", "rb") as f:
                 # test data
                 self.kps_global = pickle.load(f)
-                self.inputs_list = list(range(1, len(self.kps_global)+2))
+                if setting == 'si':
+                    with open(f"./datasets/mslr2025/{self.setting}_dev_info.json", 'r') as f:
+                        inputs_list = json.load(f)
+                    self.inputs_list = list()
+                    for item in inputs_list:
+                        if item['video_id'] in self.kps_global.keys():
+                            self.inputs_list.append(item)
+                        else:
+                            print(item)
+                else:
+                    self.inputs_list = list(range(1, len(self.kps_global) + 2))
         else:
             if len(self.mode_list) == 2:
                 inputs_list = []
@@ -57,7 +68,7 @@ class SkeletonFeeder(data.Dataset):
                 with open(f"./datasets/mslr2025/{self.setting}_{mode}_info.json", 'r') as f:
                     # dataset info
                     inputs_list = json.load(f)
-            with open("./datasets/pose_data_isharah1000_hands_lips_body_May12.pkl", "rb") as f:
+            with open(f"./datasets/pose_data_isharah2000_hands_lips_body_phase2_{self.setting.upper()}.pkl", "rb") as f:
                 # all data
                 self.kps_global = pickle.load(f)
 
@@ -67,6 +78,20 @@ class SkeletonFeeder(data.Dataset):
                     self.inputs_list.append(item)
                 else:
                     print(item)
+
+        if mode == 'train':
+            filtered_setting = {
+                'si_0': [],
+                'si_1': ['00', '01'],
+                'si_2': ['02', '03'],
+                'si_3': ['04', '05'],
+                'si_4': ['06', '07'],
+                'si_5': ['09', '13'],
+                'si_6': ['14', '15'],
+                'si_7': ['16', '17'],
+            }
+            self.inputs_list = [item for item in self.inputs_list if item['signer'] not in filtered_setting[fs]]
+
         self.norm_div = (10240 - 1) / 2
         print(mode, len(self))
 
@@ -127,7 +152,11 @@ class SkeletonFeeder(data.Dataset):
     def read_pose(self, index, num_glosses=-1):
         # load file info
         if self.mode == 'test':
-            pose_data = self.kps_global[self.inputs_list[index]]['keypoints']
+            item = self.inputs_list[index]
+            if isinstance(item, dict):
+                pose_data = self.kps_global[item["video_id"]]["keypoints"]
+            else:
+                pose_data = self.kps_global[item]['keypoints']
             label_list = 1
             fi = '[EMPTY]'
         else:

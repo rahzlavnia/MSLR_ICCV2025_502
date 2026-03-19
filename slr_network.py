@@ -43,8 +43,8 @@ class TwoStream_Cosign(nn.Module):
 
         self.stream_configs = {
             'static': {'input_dim': 256*4},
-            'motion': {'input_dim': 256*4}, 
-            'fusion': {'input_dim': hidden_size}
+            # 'motion': {'input_dim': 256*4},
+            # 'fusion': {'input_dim': hidden_size}
         }
         for name, config in self.stream_configs.items():
             conv1d = TemporalConv(config['input_dim'], hidden_size, conv_type)
@@ -94,8 +94,12 @@ class TwoStream_Cosign(nn.Module):
             results['feat_len'] = results['view1_static'][-1]
             return results
         else:
-            fusion = visual_ret['fusion']
-            conv1d_logits_fusion, seq_logits_fusion, feat_len = self.forward_contextual(fusion, len_x, self.conv1d_fusion, self.contextual_module_fusion, self.classifier_fusion)
+            # fusion = visual_ret['fusion']
+            # conv1d_logits_fusion, seq_logits_fusion, feat_len = self.forward_contextual(fusion, len_x, self.conv1d_fusion, self.contextual_module_fusion, self.classifier_fusion)
+            conv1d_module = getattr(self, f'conv1d_static')
+            contextual_module = getattr(self, f'contextual_module_static')
+            classifier = getattr(self, f'classifier_static')
+            conv1d_logits_fusion, seq_logits_fusion, feat_len = self.forward_contextual(visual_ret, len_x, conv1d_module, contextual_module, classifier)
 
             def decode_if_not_training(logits):
                 return None if self.training else self.decoder.decode(

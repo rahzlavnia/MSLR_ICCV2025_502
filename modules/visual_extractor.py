@@ -194,27 +194,28 @@ class CoSign2s(nn.Module):
                 static = self.static_layers[static_idx](static)
                 static_idx += 1
             
-            for _ in step['motion_steps']:
-                motion = self.motion_layers[motion_idx](motion)
-                motion_idx += 1
+            # for _ in step['motion_steps']:
+            #     motion = self.motion_layers[motion_idx](motion)
+            #     motion_idx += 1
             
-            if step['fusion_input'] == 'concat':
-                fusion_input = torch.cat([static, motion], dim=1)
-            else:
-                fusion_input = torch.cat([fusion, static + motion], dim=1)
+            # if step['fusion_input'] == 'concat':
+            #     fusion_input = torch.cat([static, motion], dim=1)
+            # else:
+            #     fusion_input = torch.cat([fusion, static + motion], dim=1)
             
-            for _ in step['fusion_steps']:
-                fusion = self.fusion_layers[fusion_idx](fusion_input)
-                fusion_input = fusion
-                fusion_idx += 1
+            # for _ in step['fusion_steps']:
+            #     fusion = self.fusion_layers[fusion_idx](fusion_input)
+            #     fusion_input = fusion
+            #     fusion_idx += 1
         
-        return static, motion, fusion
+        # return static, motion, fusion
+        return static
 
     def apply_masks(self, cat_feat_static, cat_feat_motion, cat_feat_fusion):
         stream_configs = [
             ('static', cat_feat_static, self.final_dim_static),
-            ('motion', cat_feat_motion, self.final_dim_motion),
-            ('fusion', cat_feat_fusion, self.final_dim_fusion)
+            # ('motion', cat_feat_motion, self.final_dim_motion),
+            # ('fusion', cat_feat_fusion, self.final_dim_fusion)
         ]
         
         results = {}
@@ -246,16 +247,18 @@ class CoSign2s(nn.Module):
         static = self.static_linear(static).permute(0,3,1,2) #N,C,T,V
         motion = self.motion_linear(motion).permute(0,3,1,2) #N,C,T,V
 
-        static, motion, fusion = self.process_static_motion(static, motion)
+        # static, motion, fusion = self.process_static_motion(static, motion)
+        static = self.process_static_motion(static, motion)
 
         cat_feat_static = self.pooling_stage(static).transpose(1,2) #B,T,C
-        cat_feat_motion = self.pooling_stage(motion).transpose(1,2)
-        cat_feat_fusion = self.pooling_stage(fusion).transpose(1,2)
+        # cat_feat_motion = self.pooling_stage(motion).transpose(1,2)
+        # cat_feat_fusion = self.pooling_stage(fusion).transpose(1,2)
 
         if self.CR_args is not None and self.training:
-            return self.apply_masks(cat_feat_static, cat_feat_motion, cat_feat_fusion)
+            return self.apply_masks(cat_feat_static, None, None)
         else:
-            fusion_feat_fusion = self.fusion_fusion(cat_feat_fusion)
-            return {
-                'fusion': fusion_feat_fusion,
-            }  
+            return cat_feat_static
+            # fusion_feat_fusion = self.fusion_fusion(cat_feat_fusion)
+            # return {
+            #     'fusion': fusion_feat_fusion,
+            # }  
