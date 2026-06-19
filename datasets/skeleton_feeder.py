@@ -40,33 +40,33 @@ class SkeletonFeeder(data.Dataset):
         self.transform_mode = "train" if transform_mode else "test"
         self.dataset = dataset
         self.used_part = used_part
-        if mode == 'test':
-            with open(f"./datasets/pose_data_isharah1000_{self.setting.upper()}_test.pkl", "rb") as f:
-                # test data
-                self.kps_global = pickle.load(f)
-                self.inputs_list = list(range(1, len(self.kps_global)+2))
+        if mode in ['train', 'dev']:
+            pkl_file = "./datasets/mslr2025/pose_bisindo_train_dev_sd.pkl"
+            info_file = f"./datasets/mslr2025/{mode}_info.json"
+        elif mode == 'test_sd':
+            pkl_file = "./datasets/mslr2025/pose_bisindo_test_sd.pkl"
+            info_file = f"./datasets/mslr2025/test_sd_info.json"
+        elif mode == 'test_si_major':
+            pkl_file = "./datasets/mslr2025/pose_bisindo_test_si-maj.pkl"
+            info_file = f"./datasets/mslr2025/test_si_major_info.json"
+        elif mode == 'test_si_minor':
+            pkl_file = "./datasets/mslr2025/pose_bisindo_test_si-min.pkl"
+            info_file = f"./datasets/mslr2025/test_si_minor_info.json"
         else:
-            if len(self.mode_list) == 2:
-                inputs_list = []
-                for mode_type in self.mode_list:
-                    with open(f"./datasets/mslr2025/{self.setting}_{mode_type}_info.json", 'r') as f:
-                        # dataset info
-                        inputs_list_temp = json.load(f)
-                        inputs_list.extend(inputs_list_temp)
-            else:
-                with open(f"./datasets/mslr2025/{self.setting}_{mode}_info.json", 'r') as f:
-                    # dataset info
-                    inputs_list = json.load(f)
-            with open("./datasets/pose_data_isharah1000_hands_lips_body_May12.pkl", "rb") as f:
-                # all data
-                self.kps_global = pickle.load(f)
+            raise ValueError(f"Unknown mode: {mode}")
 
-            self.inputs_list = list()
-            for item in inputs_list:
-                if item['video_id'] in self.kps_global.keys():
-                    self.inputs_list.append(item)
-                else:
-                    print(item)
+        with open(info_file, 'r') as f:
+            inputs_list = json.load(f)
+            
+        with open(pkl_file, "rb") as f:
+            self.kps_global = pickle.load(f)
+
+        self.inputs_list = list()
+        for item in inputs_list:
+            if item['video_id'] in self.kps_global.keys():
+                self.inputs_list.append(item)
+            else:
+                print(item)
         self.norm_div = (10240 - 1) / 2
         print(mode, len(self))
 
@@ -85,7 +85,7 @@ class SkeletonFeeder(data.Dataset):
         self.norm_point = norm_point
         if norm_point is None:
             print('no centeralization')
-        self.data_aug = self.pose_transform()
+        # self.data_aug = self.pose_transform()
     
     def __getitem__(self, idx):
         if self.data_type == 'skeleton':

@@ -1,0 +1,31 @@
+id|gloss|text
+P6_S01_MJ|AKU CIUM BADAN DIA|Saya mencium bau badan dia
+P6_S02_MJ|AKU LIHAT ADA ULAR MASUK KELAS|Saya melihat ada ular masuk kelas
+P6_S03_MJ|AKU NILAI JELEK|Nilai ku jelek
+P6_S04_MJ|AKU PUSING AKU HARUS PERIKSA MANA|Saya sering pusing, saya harus periksa ke mana?
+P6_S05_MJ|APA KAMU PERNAH BACA BUKU BAHASA INGGRIS|Apa kamu pernah membaca novel bahasa inggris?
+P6_S06_MJ|AYAH SAMA IBU MANA|Di mana ayah sama Ibu?
+P6_S07_MJ|BADAN AKU GEMUK TAPI BADAN ADIK KURUS|Badan ku gemuk, tapi badan adik kurus
+P6_S08_MJ|BUKU AKU SOBEK GEGARA DIA|Dia menyobek buku saya
+P6_S09_MJ|DIA ANAK BAIK SAMPAI BANYAK ORANG SUKA|Dia anak baik sehingga banyak orang menyukainya
+P6_S10_MJ|DIA MENGEJEK AKU|Dia mengejek saya
+P6_S11_MJ|GAKBOLEH PULANG SEKARANG KAMU|Kamu tidak boleh pulang sekarang.
+P6_S12_MJ|IBU AKU PUNYA KUCING SAMA IKAN|Ibu aku punya kucing sama ikan.
+P6_S13_MJ|KAKAK AKU KASIH HADIAH BUAT AKU|Kakak saya memberi saya hadiah.
+P6_S14_MJ|KAMU BELAJAR BISINDO KAPAN|Kapan kamu belajar Bisindo?
+P6_S15_MJ|KAMU PERGI MANA|Kemana kamu mau pergi?
+P6_S16_MJ|KAMU PUNYA ANGGOTA KELUARGA BERAPA|Berapa jumlah anggota keluarga kamu?
+P6_S17_MJ|KENAPA KAMU GAK MASUK KULIAH KEMARIN|Mengapa kemarin kamu tidak kuliah?
+P6_S18_MJ|KITA ISTIRAHAT JAM BERAPA|Jam berapa kita istirahat?
+P6_S19_MJ|MANA IBU KAMU BAIK-BAIK ATAU TIDAK|Bagaimana keadaan ibumu?
+P6_S20_MJ|NAMA ISYARAT KAMU APA|Nama isyarat kamu apa?
+P6_S21_MJ|OBAT BISA BELI TOKO MANA|Di apotek mana obat ini bisa dibeli?
+P6_S22_MJ|ORANG JAHAT SANA PUKUL AKU BERULANG|Orang jahat di sana memukul saya berulang.
+P6_S23_MJ|POLISI SANA PUKUL PENCURI|Pencuri di sana dipukul polisi.
+P6_S24_MJ|RUMAH DIMANA KAMU|Rumah kamu di mana?
+P6_S25_MJ|SANA BERITA SUDAH BANYAK RIBUAN ORANG LIHAT|Berita di sana sudah dilihat oleh ribuan orang.
+P6_S26_MJ|SANA ENAK NASI PADANG TAPI MAHAL|Nasi padang di sana enak, tetapi mahal
+P6_S27_MJ|SANA TOILET KOTOR|Toilet di sana kotor
+P6_S28_MJ|SEPATU DIA KOTOR|Sepatu dia kotor
+P6_S29_MJ|TONG-SAMPAH ADA SEMUT BANYAK|Tempat sampah banyak semut
+P6_S30_MJ|ULAR SANA MAKAN KAMBING|Kambing di sana dimakan ular
