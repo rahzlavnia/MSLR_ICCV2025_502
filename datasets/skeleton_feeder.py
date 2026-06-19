@@ -68,6 +68,7 @@ class SkeletonFeeder(data.Dataset):
             else:
                 print(item)
         self.norm_div = 0.5
+        # self.norm_div = (10240 - 1) / 2
         print(mode, len(self))
 
         if self.data_type == 'skeleton':
