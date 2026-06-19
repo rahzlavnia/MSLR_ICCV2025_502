@@ -60,7 +60,7 @@ model_args:
 batch_size: 8
 test_batch_size: 1
 optimizer_args:
-  base_lr: 0.0002
+  base_lr: 0.0004
   learning_ratio: 1
   nesterov: false
   optimizer: AdamW

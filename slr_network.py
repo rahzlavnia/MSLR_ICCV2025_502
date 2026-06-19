@@ -41,9 +41,10 @@ class TwoStream_Cosign(nn.Module):
         self.num_classes = len(gloss_dict['id2gloss']) + 1
         self.decoder = utils.Decode(gloss_dict, self.num_classes, 'beam')
 
+        part_num = len(visual_args['split'])
         self.stream_configs = {
-            'static': {'input_dim': 256*4},
-            'motion': {'input_dim': 256*4}, 
+            'static': {'input_dim': 256 * part_num},
+            'motion': {'input_dim': 256 * part_num}, 
             'fusion': {'input_dim': hidden_size}
         }
         for name, config in self.stream_configs.items():
