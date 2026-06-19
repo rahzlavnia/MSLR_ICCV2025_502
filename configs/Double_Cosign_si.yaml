@@ -14,13 +14,13 @@ google_drive_dir: ""
 feeder: SkeletonFeeder
 # [si] for signer independent and [us] for unseen sentence
 dataset: mslr_iccv_si
-num_worker: 10
+num_worker: 2
 feeder_args:
   setting: si
   datatype: skeleton
-  split: &split [25, 46, 67, 86]
-  norm_point: [0, 25, 46, 67]
-  used_part: &used_part ['body', 'hand21', 'mouth_8']
+  split: &split [21, 42]
+  norm_point: [0, 21]
+  used_part: &used_part ['hand21']
 
 # model args
 
@@ -57,8 +57,8 @@ model_args:
 
 # optim args
 
-batch_size: 4
-test_batch_size: 4
+batch_size: 8
+test_batch_size: 1
 optimizer_args:
   base_lr: 0.0002
   learning_ratio: 1
