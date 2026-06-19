@@ -41,16 +41,16 @@ class SkeletonFeeder(data.Dataset):
         self.dataset = dataset
         self.used_part = used_part
         if mode in ['train', 'dev']:
-            pkl_file = "./datasets/mslr2025/pose_bisindo_train_dev_sd.pkl"
+            pkl_file = "./datasets/pose_bisindo_train_dev_sd.pkl"
             info_file = f"./datasets/mslr2025/{mode}_info.json"
         elif mode == 'test_sd':
-            pkl_file = "./datasets/mslr2025/pose_bisindo_test_sd.pkl"
+            pkl_file = "./datasets/pose_bisindo_test_sd.pkl"
             info_file = f"./datasets/mslr2025/test_sd_info.json"
         elif mode == 'test_si_major':
-            pkl_file = "./datasets/mslr2025/pose_bisindo_test_si-maj.pkl"
+            pkl_file = "./datasets/pose_bisindo_test_si-maj.pkl"
             info_file = f"./datasets/mslr2025/test_si_major_info.json"
         elif mode == 'test_si_minor':
-            pkl_file = "./datasets/mslr2025/pose_bisindo_test_si-min.pkl"
+            pkl_file = "./datasets/pose_bisindo_test_si-min.pkl"
             info_file = f"./datasets/mslr2025/test_si_minor_info.json"
         else:
             raise ValueError(f"Unknown mode: {mode}")
