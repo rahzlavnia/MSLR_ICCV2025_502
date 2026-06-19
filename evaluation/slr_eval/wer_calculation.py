@@ -11,16 +11,17 @@ def evaluate(prefix="./", mode="dev", evaluate_dir=None, evaluate_prefix=None,
     '''
     sclite_path = "./software/sclite"
     print(os.getcwd())
-    os.system(f"bash {evaluate_dir}/preprocess.sh {prefix + output_file} {prefix}tmp.ctm {prefix}tmp2.ctm")
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    os.system(f"bash {script_dir}/preprocess.sh {prefix + output_file} {prefix}tmp.ctm {prefix}tmp2.ctm")
     # if not csl_daily:
-    #     os.system(f"bash {evaluate_dir}/preprocess.sh {prefix + output_file} {prefix}tmp.ctm {prefix}tmp2.ctm")
+    #     os.system(f"bash {script_dir}/preprocess.sh {prefix + output_file} {prefix}tmp.ctm {prefix}tmp2.ctm")
     # else:
     #     os.system(f"cp {prefix + output_file} {prefix}tmp2.ctm")
     # pdb.set_trace()
     os.system(f"cat {evaluate_dir}/{evaluate_prefix}-{mode}.stm | sort  -k1,1 > {prefix}tmp.stm")
     # pdb.set_trace()
     # tmp2.ctm: prediction result; tmp.stm: ground-truth result
-    os.system(f"python {evaluate_dir}/mergectmstm.py {prefix}tmp2.ctm {prefix}tmp.stm")
+    os.system(f"python {script_dir}/mergectmstm.py {prefix}tmp2.ctm {prefix}tmp.stm")
     os.system(f"cp {prefix}tmp2.ctm {prefix}out.{output_file}")
     if python_evaluate:
         ret = wer_calculation(f"{evaluate_dir}/{evaluate_prefix}-{mode}.stm", f"{prefix}out.{output_file}")
@@ -43,10 +44,13 @@ def evaluate(prefix="./", mode="dev", evaluate_dir=None, evaluate_prefix=None,
             f"{sclite_path}  -h {prefix}out.{output_file} ctm"
             f" -r {prefix}tmp.stm stm -f 0 -o sgml sum rsum pra"
         )
-    ret = os.popen(
+    lines = os.popen(
         f"{sclite_path}  -h {prefix}out.{output_file} ctm "
         f"-r {prefix}tmp.stm stm -f 0 -o dtl stdout |grep Error"
-    ).readlines()[0]
+    ).readlines()
+    if not lines:
+        return 100.0
+    ret = lines[0]
     # pdb.set_trace()
     return float(ret.split("=")[1].split("%")[0])
 

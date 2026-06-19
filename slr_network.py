@@ -98,6 +98,13 @@ class TwoStream_Cosign(nn.Module):
             fusion = visual_ret['fusion']
             conv1d_logits_fusion, seq_logits_fusion, feat_len = self.forward_contextual(fusion, len_x, self.conv1d_fusion, self.contextual_module_fusion, self.classifier_fusion)
 
+            if inputs_dict.get('skip_decoding', False):
+                return {
+                    'conv_logits_fusion': conv1d_logits_fusion,
+                    'seq_logits_fusion': seq_logits_fusion,
+                    'feat_len': feat_len,
+                }
+
             def decode_if_not_training(logits):
                 return None if self.training else self.decoder.decode(
                     logits*self.norm_scale, feat_len, batch_first=False, probs=False
