@@ -205,7 +205,7 @@ class SkeletonFeeder(data.Dataset):
             print("Apply testing transform.")
             return skeleton_augmentation.Compose(
                 [
-                    skeleton_augmentation.TemporalRescale_test(),
+                    # skeleton_augmentation.TemporalRescale_test(),
                     skeleton_augmentation.ToTensor(),
                 ]
             )
