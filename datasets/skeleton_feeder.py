@@ -67,7 +67,7 @@ class SkeletonFeeder(data.Dataset):
                 self.inputs_list.append(item)
             else:
                 print(item)
-        self.norm_div = (10240 - 1) / 2
+        self.norm_div = 0.5
         print(mode, len(self))
 
         if self.data_type == 'skeleton':
@@ -90,8 +90,8 @@ class SkeletonFeeder(data.Dataset):
     def __getitem__(self, idx):
         if self.data_type == 'skeleton':
             input_data, label, fi = self.read_pose(idx)
-            conf = np.zeros_like(input_data)[:, :, 0]
             input_data = input_data[:, self.pose_idx, :2]
+            conf = np.zeros_like(input_data)[:, :, 0]
 
             total_motion = np.zeros(input_data.shape[0:2] + (4,))
             total_motion[1:, :, 0:2] = input_data[1:, :, 0:2] - input_data[0:-1, :, 0:2]
@@ -209,7 +209,7 @@ class SkeletonFeeder(data.Dataset):
             )
 
     def __len__(self):
-        return len(self.inputs_list) - 1
+        return len(self.inputs_list)
 
     @staticmethod
     def collate_fn(batch):

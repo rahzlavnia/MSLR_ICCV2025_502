@@ -166,6 +166,9 @@ class SLRProcessor(object):
         )
 
     def sync_workdir_to_google_drive(self):
+        sync_to_drive = getattr(self.arg, 'sync_to_drive', False)
+        if not sync_to_drive:
+            return
         target_root = getattr(self.arg, 'google_drive_dir', None)
         if not target_root:
             return
