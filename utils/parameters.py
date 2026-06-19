@@ -12,6 +12,16 @@ def get_parser():
         default='./work_dir/test/',
         help='the work folder for storing results')
     parser.add_argument(
+        '--sync_to_drive',
+        type=str2bool,
+        default=False,
+        help='sync work dir to google drive')
+    parser.add_argument(
+        '--google_drive_dir',
+        type=str,
+        default='',
+        help='the google drive dir to sync to')
+    parser.add_argument(
         '--config',
         default='./configs/baseline.yaml',
         help='path to the configuration file')

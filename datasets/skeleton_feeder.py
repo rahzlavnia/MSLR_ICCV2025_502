@@ -31,6 +31,7 @@ class SkeletonFeeder(data.Dataset):
         split=None,
         norm_point=None,
         used_part=None,
+        dataset_root=None,
     ):
         self.mode = mode
         self.mode_list = mode.split("_")
@@ -86,7 +87,7 @@ class SkeletonFeeder(data.Dataset):
         self.norm_point = norm_point
         if norm_point is None:
             print('no centeralization')
-        # self.data_aug = self.pose_transform()
+        self.data_aug = self.pose_transform()
     
     def __getitem__(self, idx):
         if self.data_type == 'skeleton':
@@ -193,8 +194,8 @@ class SkeletonFeeder(data.Dataset):
             return skeleton_augmentation.Compose(
                     [
                         # Signer independent
-                        skeleton_augmentation.TemporalDropout(0.25),
-                        skeleton_augmentation.Jitter(),
+                        # skeleton_augmentation.TemporalDropout(0.25),
+                        # skeleton_augmentation.Jitter(),
                         # Unseen sentence
                         # skeleton_augmentation.TemporalDropout(0.15),
                         skeleton_augmentation.ToTensor(),
