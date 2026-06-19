@@ -151,7 +151,7 @@ class SkeletonFeeder(data.Dataset):
     def normalize(self, video, label=None, file_id=None):
         if self.data_type == 'skeleton':
             input_data = self.data_aug(video)
-            input_data = self.simple_normalize(input_data)
+            # input_data = self.simple_normalize(input_data)
             return input_data
 
     def simple_normalize(self, origin_input_data):
