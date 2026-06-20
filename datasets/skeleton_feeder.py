@@ -226,8 +226,8 @@ class SkeletonFeeder(data.Dataset):
                     f"augmentation_types '{name}' tidak dikenal. "
                     f"Pilihan: {list(self.AUGMENTATION_REGISTRY.keys())}"
                 )
-            cls, default_args = self.AUGMENTATION_REGISTRY[name]
-            transforms.append(cls(**{**default_args, **override_args}))
+            cls = self.AUGMENTATION_REGISTRY[name]
+            transforms.append(cls(**override_args))
         return transforms
 
     def pose_transform(self):

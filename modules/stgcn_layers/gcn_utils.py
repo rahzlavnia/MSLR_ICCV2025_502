@@ -40,7 +40,7 @@ class Graph:
         return self.A
 
     def get_edge(self, layout):
-        if layout == 'custom_hand21':
+        if layout in ('custom_hand21', 'custom_left_hand', 'custom_right_hand'):
             self.num_node = 21
             self_link = [(i, i) for i in range(self.num_node)]
             neighbor_1base = [
