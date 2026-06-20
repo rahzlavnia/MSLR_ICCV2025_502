@@ -94,6 +94,10 @@ class SkeletonFeeder(data.Dataset):
                     self.pose_idx += [i for i in range(21, 42)]
                 elif part == 'mouth_8':
                     self.pose_idx += [i for i in range(42, 61)]
+                elif part == 'left_hand':
+                    self.pose_idx += [i for i in range(0, 21)]
+                elif part == 'right_hand':
+                    self.pose_idx += [i for i in range(21, 42)]
 
         self.split = split
         self.norm_point = norm_point
