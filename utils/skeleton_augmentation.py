@@ -4,19 +4,51 @@ import numpy as np
 
 EPS = 1e-4
 
+SENTENCE_LENGTH_BOUNDS = {
+    "S01": {"min_len": 115, "max_len": 245},
+    "S02": {"min_len": 179, "max_len": 261},
+    "S03": {"min_len": 99, "max_len": 180},
+    "S04": {"min_len": 184, "max_len": 323},
+    "S05": {"min_len": 172, "max_len": 435},
+    "S06": {"min_len": 110, "max_len": 150},
+    "S07": {"min_len": 220, "max_len": 365},
+    "S08": {"min_len": 159, "max_len": 315},
+    "S09": {"min_len": 194, "max_len": 339},
+    "S10": {"min_len": 95, "max_len": 185},
+    "S11": {"min_len": 110, "max_len": 215},
+    "S12": {"min_len": 200, "max_len": 340},
+    "S13": {"min_len": 150, "max_len": 290},
+    "S14": {"min_len": 133, "max_len": 230},
+    "S15": {"min_len": 94, "max_len": 184},
+    "S16": {"min_len": 154, "max_len": 320},
+    "S17": {"min_len": 185, "max_len": 330},
+    "S18": {"min_len": 127, "max_len": 240},
+    "S19": {"min_len": 155, "max_len": 335},
+    "S20": {"min_len": 96, "max_len": 220},
+    "S21": {"min_len": 164, "max_len": 283},
+    "S22": {"min_len": 179, "max_len": 329},
+    "S23": {"min_len": 110, "max_len": 265},
+    "S24": {"min_len": 81, "max_len": 165},
+    "S25": {"min_len": 203, "max_len": 450},
+    "S26": {"min_len": 183, "max_len": 310},
+    "S27": {"min_len": 94, "max_len": 160},
+    "S28": {"min_len": 89, "max_len": 189},
+    "S29": {"min_len": 145, "max_len": 235},
+    "S30": {"min_len": 141, "max_len": 260},
+}
 
 class Compose(object):
     def __init__(self, transforms):
         self.transforms = transforms
 
-    def __call__(self, skeleton):
+    def __call__(self, skeleton, **kwargs):
         for t in self.transforms:
-            skeleton = t(skeleton)
+            skeleton = t(skeleton, **kwargs)
         return skeleton
 
 
 class ToTensor(object):
-    def __call__(self, skeleton):
+    def __call__(self, skeleton, **kwargs):
         if isinstance(skeleton, np.ndarray):
             skeleton = np.asarray(skeleton)
             skeleton = torch.from_numpy(skeleton).float()
@@ -44,7 +76,7 @@ class Downsample(object):
         self.step = max(1, int(round(1.0 / ratio)))
         self.random_offset = random_offset
 
-    def __call__(self, clip):
+    def __call__(self, clip, **kwargs):
         if self.random_offset:
             start_idx = 0 if random.uniform(0, 1) > 0.5 else 1
         else:
@@ -64,7 +96,7 @@ class Jitter(object):
     def __init__(self, std_dev=0.006) -> None:
         self.std_dev = std_dev
 
-    def __call__(self, skeleton):
+    def __call__(self, skeleton, **kwargs):
         noise = np.random.normal(loc=0, scale=self.std_dev, size=skeleton.shape)
         return skeleton + noise
 
@@ -84,7 +116,7 @@ class TemporalDropout(object):
     def __init__(self, max_dp=0.2) -> None:
         self.max_dp = max_dp
 
-    def __call__(self, clip):
+    def __call__(self, skeleton, **kwargs):
         vid_len = len(clip)
         dp_len = int(vid_len * self.max_dp * np.random.random())
         start = np.random.randint(0, vid_len - dp_len + 1)
@@ -108,7 +140,7 @@ class TemporalCrop(object):
     def __init__(self, max_dp=0.2) -> None:
         self.max_dp = max_dp
 
-    def __call__(self, clip):
+    def __call__(self, skeleton, **kwargs):
         vid_len = len(clip)
         dp_len = int(vid_len * self.max_dp * np.random.random())
         drop_head = random.randint(0, dp_len)
@@ -131,7 +163,7 @@ class Dropout_kp(object):
     def __init__(self, drop_prob=0.1) -> None:
         self.drop_prob = drop_prob
 
-    def __call__(self, skeleton):
+    def __call__(self, skeleton, **kwargs):
         T, K, _ = skeleton.shape
         mask = np.random.rand(T, K) > self.drop_prob
         return skeleton * mask[..., np.newaxis]
@@ -170,7 +202,7 @@ class Scale(object):
     def __init__(self, scale_range=(0.8, 1.2)) -> None:
         self.scale_range = scale_range
 
-    def __call__(self, skeleton):
+    def __call__(self, skeleton, **kwargs):
         T = skeleton.shape[0]
         scales = np.random.uniform(*self.scale_range, size=T)
         scaled_skeleton = skeleton * scales[:, np.newaxis, np.newaxis]
@@ -187,22 +219,31 @@ class TemporalRescale(object):
     Args:
         temp_scaling (float): Temporal scaling factor. Video length is scaled
             between [1 - temp_scaling, 1 + temp_scaling].
+        bounds (dict): Optional per-sentence {sentence_id: {min_len, max_len}}
+            override. Defaults to SENTENCE_LENGTH_BOUNDS.
+        default_min_len/default_max_len: Fallback bounds when sentence_id is
+            unknown or not provided.
     """
 
-    def __init__(self, temp_scaling=0.2) -> None:
-        self.min_len = 32
-        self.max_len = 230
+    def __init__(self, temp_scaling=0.2, bounds=None, default_min_len=32, default_max_len=230) -> None:
+        self.bounds = bounds if bounds is not None else SENTENCE_LENGTH_BOUNDS
+        self.default_min_len = default_min_len
+        self.default_max_len = default_max_len
         self.L = 1.0 - temp_scaling
         self.U = 1.0 + temp_scaling
 
-    def __call__(self, clip):
+    def __call__(self, clip, sentence_id=None, **kwargs):
         # clip shape: T X N X 2
+        b = self.bounds.get(sentence_id, {})
+        min_len = b.get("min_len", self.default_min_len)
+        max_len = b.get("max_len", self.default_max_len)
+
         vid_len = len(clip)
         new_len = int(vid_len * np.random.uniform(self.L, self.U))
-        if new_len < self.min_len:
-            new_len = self.min_len
-        if new_len > self.max_len:
-            new_len = self.max_len
+        if new_len < min_len:
+            new_len = min_len
+        if new_len > max_len:
+            new_len = max_len
         if (new_len - 4) % 4 != 0:
             new_len += 4 - (new_len - 4) % 4
         if new_len <= vid_len:
@@ -221,7 +262,7 @@ class TemporalRescale_test(object):
     test behaviour.
     """
 
-    def __call__(self, clip):
+    def __call__(self, clip, **kwargs):
         # clip shape: T X N X 2
         vid_len = len(clip)
         new_len = vid_len

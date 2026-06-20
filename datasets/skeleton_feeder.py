@@ -117,6 +117,7 @@ class SkeletonFeeder(data.Dataset):
     def __getitem__(self, idx):
         if self.data_type == 'skeleton':
             input_data, label, fi = self.read_pose(idx)
+            sentence_id = fi.get("sentence_id") if isinstance(fi, dict) else None
             input_data = input_data[:, self.pose_idx, :2]
             conf = np.zeros_like(input_data)[:, :, 0]
 
@@ -127,7 +128,7 @@ class SkeletonFeeder(data.Dataset):
             # T * 79 * 6 (2+4)
             final = np.concatenate([input_data, total_motion, conf[:,:,None]], axis=-1)
 
-            input_data = self.normalize(final)
+            input_data = self.normalize(final, sentence_id=sentence_id)
             if self.mode == 'test':
                 return (
                     input_data,
@@ -173,9 +174,9 @@ class SkeletonFeeder(data.Dataset):
             fi,
         )
 
-    def normalize(self, video, label=None, file_id=None):
+    def normalize(self, video, sentence_id=None, label=None, file_id=None):
         if self.data_type == 'skeleton':
-            input_data = self.data_aug(video)
+            input_data = self.data_aug(video, sentence_id=sentence_id)
             input_data = self.simple_normalize(input_data)
             return input_data
 
