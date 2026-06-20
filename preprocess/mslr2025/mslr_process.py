@@ -36,18 +36,13 @@ os.makedirs(DATASET_ROOT, exist_ok=True)
 # Dataset splits
 DATASET_SPLITS = {
     "train": {
-        "folder": "SD",
+        "folder": "SI",
         "file": "train_list.txt",
     },
 
     "dev": {
-        "folder": "SD",
+        "folder": "SI",
         "file": "dev_list.txt",
-    },
-
-    "test_sd": {
-        "folder": "SD",
-        "file": "test_list.txt",
     },
 
     "test_si_major": {

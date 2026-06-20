@@ -14,6 +14,11 @@ P2_S01_R3|AKU CIUM BADAN DIA|Saya mencium bau badan dia
 P3_S01_R3|AKU CIUM BADAN DIA|Saya mencium bau badan dia
 P4_S01_R3|AKU CIUM BADAN DIA|Saya mencium bau badan dia
 P5_S01_R3|AKU CIUM BADAN DIA|Saya mencium bau badan dia
+P1_S01_R4|AKU CIUM BADAN DIA|Saya mencium bau badan dia
+P2_S01_R4|AKU CIUM BADAN DIA|Saya mencium bau badan dia
+P3_S01_R4|AKU CIUM BADAN DIA|Saya mencium bau badan dia
+P4_S01_R4|AKU CIUM BADAN DIA|Saya mencium bau badan dia
+P5_S01_R4|AKU CIUM BADAN DIA|Saya mencium bau badan dia
 P1_S02_R1|AKU LIHAT ADA ULAR MASUK KELAS|Saya melihat ada ular masuk kelas
 P2_S02_R1|AKU LIHAT ADA ULAR MASUK KELAS|Saya melihat ada ular masuk kelas
 P3_S02_R1|AKU LIHAT ADA ULAR MASUK KELAS|Saya melihat ada ular masuk kelas
@@ -29,6 +34,11 @@ P2_S02_R3|AKU LIHAT ADA ULAR MASUK KELAS|Saya melihat ada ular masuk kelas
 P3_S02_R3|AKU LIHAT ADA ULAR MASUK KELAS|Saya melihat ada ular masuk kelas
 P4_S02_R3|AKU LIHAT ADA ULAR MASUK KELAS|Saya melihat ada ular masuk kelas
 P5_S02_R3|AKU LIHAT ADA ULAR MASUK KELAS|Saya melihat ada ular masuk kelas
+P1_S02_R4|AKU LIHAT ADA ULAR MASUK KELAS|Saya melihat ada ular masuk kelas
+P2_S02_R4|AKU LIHAT ADA ULAR MASUK KELAS|Saya melihat ada ular masuk kelas
+P3_S02_R4|AKU LIHAT ADA ULAR MASUK KELAS|Saya melihat ada ular masuk kelas
+P4_S02_R4|AKU LIHAT ADA ULAR MASUK KELAS|Saya melihat ada ular masuk kelas
+P5_S02_R4|AKU LIHAT ADA ULAR MASUK KELAS|Saya melihat ada ular masuk kelas
 P1_S03_R1|AKU NILAI JELEK|Nilai ku jelek
 P2_S03_R1|AKU NILAI JELEK|Nilai ku jelek
 P3_S03_R1|AKU NILAI JELEK|Nilai ku jelek
@@ -44,6 +54,11 @@ P2_S03_R3|AKU NILAI JELEK|Nilai ku jelek
 P3_S03_R3|AKU NILAI JELEK|Nilai ku jelek
 P4_S03_R3|AKU NILAI JELEK|Nilai ku jelek
 P5_S03_R3|AKU NILAI JELEK|Nilai ku jelek
+P1_S03_R4|AKU NILAI JELEK|Nilai ku jelek
+P2_S03_R4|AKU NILAI JELEK|Nilai ku jelek
+P3_S03_R4|AKU NILAI JELEK|Nilai ku jelek
+P4_S03_R4|AKU NILAI JELEK|Nilai ku jelek
+P5_S03_R4|AKU NILAI JELEK|Nilai ku jelek
 P1_S04_R1|AKU PUSING AKU HARUS PERIKSA MANA|Saya sering pusing, saya harus periksa ke mana?
 P2_S04_R1|AKU PUSING AKU HARUS PERIKSA MANA|Saya sering pusing, saya harus periksa ke mana?
 P3_S04_R1|AKU PUSING AKU HARUS PERIKSA MANA|Saya sering pusing, saya harus periksa ke mana?
@@ -59,6 +74,11 @@ P2_S04_R3|AKU PUSING AKU HARUS PERIKSA MANA|Saya sering pusing, saya harus perik
 P3_S04_R3|AKU PUSING AKU HARUS PERIKSA MANA|Saya sering pusing, saya harus periksa ke mana?
 P4_S04_R3|AKU PUSING AKU HARUS PERIKSA MANA|Saya sering pusing, saya harus periksa ke mana?
 P5_S04_R3|AKU PUSING AKU HARUS PERIKSA MANA|Saya sering pusing, saya harus periksa ke mana?
+P1_S04_R4|AKU PUSING AKU HARUS PERIKSA MANA|Saya sering pusing, saya harus periksa ke mana?
+P2_S04_R4|AKU PUSING AKU HARUS PERIKSA MANA|Saya sering pusing, saya harus periksa ke mana?
+P3_S04_R4|AKU PUSING AKU HARUS PERIKSA MANA|Saya sering pusing, saya harus periksa ke mana?
+P4_S04_R4|AKU PUSING AKU HARUS PERIKSA MANA|Saya sering pusing, saya harus periksa ke mana?
+P5_S04_R4|AKU PUSING AKU HARUS PERIKSA MANA|Saya sering pusing, saya harus periksa ke mana?
 P1_S05_R1|APA KAMU PERNAH BACA BUKU BAHASA INGGRIS|Apa kamu pernah membaca novel bahasa inggris?
 P2_S05_R1|APA KAMU PERNAH BACA BUKU BAHASA INGGRIS|Apa kamu pernah membaca novel bahasa inggris?
 P3_S05_R1|APA KAMU PERNAH BACA BUKU BAHASA INGGRIS|Apa kamu pernah membaca novel bahasa inggris?
@@ -74,6 +94,11 @@ P2_S05_R3|APA KAMU PERNAH BACA BUKU BAHASA INGGRIS|Apa kamu pernah membaca novel
 P3_S05_R3|APA KAMU PERNAH BACA BUKU BAHASA INGGRIS|Apa kamu pernah membaca novel bahasa inggris?
 P4_S05_R3|APA KAMU PERNAH BACA BUKU BAHASA INGGRIS|Apa kamu pernah membaca novel bahasa inggris?
 P5_S05_R3|APA KAMU PERNAH BACA BUKU BAHASA INGGRIS|Apa kamu pernah membaca novel bahasa inggris?
+P1_S05_R4|APA KAMU PERNAH BACA BUKU BAHASA INGGRIS|Apa kamu pernah membaca novel bahasa inggris?
+P2_S05_R4|APA KAMU PERNAH BACA BUKU BAHASA INGGRIS|Apa kamu pernah membaca novel bahasa inggris?
+P3_S05_R4|APA KAMU PERNAH BACA BUKU BAHASA INGGRIS|Apa kamu pernah membaca novel bahasa inggris?
+P4_S05_R4|APA KAMU PERNAH BACA BUKU BAHASA INGGRIS|Apa kamu pernah membaca novel bahasa inggris?
+P5_S05_R4|APA KAMU PERNAH BACA BUKU BAHASA INGGRIS|Apa kamu pernah membaca novel bahasa inggris?
 P1_S06_R1|AYAH SAMA IBU MANA|Di mana ayah sama Ibu?
 P2_S06_R1|AYAH SAMA IBU MANA|Di mana ayah sama Ibu?
 P3_S06_R1|AYAH SAMA IBU MANA|Di mana ayah sama Ibu?
@@ -89,6 +114,11 @@ P2_S06_R3|AYAH SAMA IBU MANA|Di mana ayah sama Ibu?
 P3_S06_R3|AYAH SAMA IBU MANA|Di mana ayah sama Ibu?
 P4_S06_R3|AYAH SAMA IBU MANA|Di mana ayah sama Ibu?
 P5_S06_R3|AYAH SAMA IBU MANA|Di mana ayah sama Ibu?
+P1_S06_R4|AYAH SAMA IBU MANA|Di mana ayah sama Ibu?
+P2_S06_R4|AYAH SAMA IBU MANA|Di mana ayah sama Ibu?
+P3_S06_R4|AYAH SAMA IBU MANA|Di mana ayah sama Ibu?
+P4_S06_R4|AYAH SAMA IBU MANA|Di mana ayah sama Ibu?
+P5_S06_R4|AYAH SAMA IBU MANA|Di mana ayah sama Ibu?
 P1_S07_R1|BADAN AKU GEMUK TAPI BADAN ADIK KURUS|Badan ku gemuk, tapi badan adik kurus
 P2_S07_R1|BADAN AKU GEMUK TAPI BADAN ADIK KURUS|Badan ku gemuk, tapi badan adik kurus
 P3_S07_R1|BADAN AKU GEMUK TAPI BADAN ADIK KURUS|Badan ku gemuk, tapi badan adik kurus
@@ -104,6 +134,11 @@ P2_S07_R3|BADAN AKU GEMUK TAPI BADAN ADIK KURUS|Badan ku gemuk, tapi badan adik 
 P3_S07_R3|BADAN AKU GEMUK TAPI BADAN ADIK KURUS|Badan ku gemuk, tapi badan adik kurus
 P4_S07_R3|BADAN AKU GEMUK TAPI BADAN ADIK KURUS|Badan ku gemuk, tapi badan adik kurus
 P5_S07_R3|BADAN AKU GEMUK TAPI BADAN ADIK KURUS|Badan ku gemuk, tapi badan adik kurus
+P1_S07_R4|BADAN AKU GEMUK TAPI BADAN ADIK KURUS|Badan ku gemuk, tapi badan adik kurus
+P2_S07_R4|BADAN AKU GEMUK TAPI BADAN ADIK KURUS|Badan ku gemuk, tapi badan adik kurus
+P3_S07_R4|BADAN AKU GEMUK TAPI BADAN ADIK KURUS|Badan ku gemuk, tapi badan adik kurus
+P4_S07_R4|BADAN AKU GEMUK TAPI BADAN ADIK KURUS|Badan ku gemuk, tapi badan adik kurus
+P5_S07_R4|BADAN AKU GEMUK TAPI BADAN ADIK KURUS|Badan ku gemuk, tapi badan adik kurus
 P1_S08_R1|BUKU AKU SOBEK GEGARA DIA|Dia menyobek buku saya
 P2_S08_R1|BUKU AKU SOBEK GEGARA DIA|Dia menyobek buku saya
 P3_S08_R1|BUKU AKU SOBEK GEGARA DIA|Dia menyobek buku saya
@@ -119,6 +154,11 @@ P2_S08_R3|BUKU AKU SOBEK GEGARA DIA|Dia menyobek buku saya
 P3_S08_R3|BUKU AKU SOBEK GEGARA DIA|Dia menyobek buku saya
 P4_S08_R3|BUKU AKU SOBEK GEGARA DIA|Dia menyobek buku saya
 P5_S08_R3|BUKU AKU SOBEK GEGARA DIA|Dia menyobek buku saya
+P1_S08_R4|BUKU AKU SOBEK GEGARA DIA|Dia menyobek buku saya
+P2_S08_R4|BUKU AKU SOBEK GEGARA DIA|Dia menyobek buku saya
+P3_S08_R4|BUKU AKU SOBEK GEGARA DIA|Dia menyobek buku saya
+P4_S08_R4|BUKU AKU SOBEK GEGARA DIA|Dia menyobek buku saya
+P5_S08_R4|BUKU AKU SOBEK GEGARA DIA|Dia menyobek buku saya
 P1_S09_R1|DIA ANAK BAIK SAMPAI BANYAK ORANG SUKA|Dia anak baik sehingga banyak orang menyukainya
 P2_S09_R1|DIA ANAK BAIK SAMPAI BANYAK ORANG SUKA|Dia anak baik sehingga banyak orang menyukainya
 P3_S09_R1|DIA ANAK BAIK SAMPAI BANYAK ORANG SUKA|Dia anak baik sehingga banyak orang menyukainya
@@ -134,6 +174,11 @@ P2_S09_R3|DIA ANAK BAIK SAMPAI BANYAK ORANG SUKA|Dia anak baik sehingga banyak o
 P3_S09_R3|DIA ANAK BAIK SAMPAI BANYAK ORANG SUKA|Dia anak baik sehingga banyak orang menyukainya
 P4_S09_R3|DIA ANAK BAIK SAMPAI BANYAK ORANG SUKA|Dia anak baik sehingga banyak orang menyukainya
 P5_S09_R3|DIA ANAK BAIK SAMPAI BANYAK ORANG SUKA|Dia anak baik sehingga banyak orang menyukainya
+P1_S09_R4|DIA ANAK BAIK SAMPAI BANYAK ORANG SUKA|Dia anak baik sehingga banyak orang menyukainya
+P2_S09_R4|DIA ANAK BAIK SAMPAI BANYAK ORANG SUKA|Dia anak baik sehingga banyak orang menyukainya
+P3_S09_R4|DIA ANAK BAIK SAMPAI BANYAK ORANG SUKA|Dia anak baik sehingga banyak orang menyukainya
+P4_S09_R4|DIA ANAK BAIK SAMPAI BANYAK ORANG SUKA|Dia anak baik sehingga banyak orang menyukainya
+P5_S09_R4|DIA ANAK BAIK SAMPAI BANYAK ORANG SUKA|Dia anak baik sehingga banyak orang menyukainya
 P1_S10_R1|DIA MENGEJEK AKU|Dia mengejek saya
 P2_S10_R1|DIA MENGEJEK AKU|Dia mengejek saya
 P3_S10_R1|DIA MENGEJEK AKU|Dia mengejek saya
@@ -149,6 +194,11 @@ P2_S10_R3|DIA MENGEJEK AKU|Dia mengejek saya
 P3_S10_R3|DIA MENGEJEK AKU|Dia mengejek saya
 P4_S10_R3|DIA MENGEJEK AKU|Dia mengejek saya
 P5_S10_R3|DIA MENGEJEK AKU|Dia mengejek saya
+P1_S10_R4|DIA MENGEJEK AKU|Dia mengejek saya
+P2_S10_R4|DIA MENGEJEK AKU|Dia mengejek saya
+P3_S10_R4|DIA MENGEJEK AKU|Dia mengejek saya
+P4_S10_R4|DIA MENGEJEK AKU|Dia mengejek saya
+P5_S10_R4|DIA MENGEJEK AKU|Dia mengejek saya
 P1_S11_R1|GAKBOLEH PULANG SEKARANG KAMU|Kamu tidak boleh pulang sekarang.
 P2_S11_R1|GAKBOLEH PULANG SEKARANG KAMU|Kamu tidak boleh pulang sekarang.
 P3_S11_R1|GAKBOLEH PULANG SEKARANG KAMU|Kamu tidak boleh pulang sekarang.
@@ -164,6 +214,11 @@ P2_S11_R3|GAKBOLEH PULANG SEKARANG KAMU|Kamu tidak boleh pulang sekarang.
 P3_S11_R3|GAKBOLEH PULANG SEKARANG KAMU|Kamu tidak boleh pulang sekarang.
 P4_S11_R3|GAKBOLEH PULANG SEKARANG KAMU|Kamu tidak boleh pulang sekarang.
 P5_S11_R3|GAKBOLEH PULANG SEKARANG KAMU|Kamu tidak boleh pulang sekarang.
+P1_S11_R4|GAKBOLEH PULANG SEKARANG KAMU|Kamu tidak boleh pulang sekarang.
+P2_S11_R4|GAKBOLEH PULANG SEKARANG KAMU|Kamu tidak boleh pulang sekarang.
+P3_S11_R4|GAKBOLEH PULANG SEKARANG KAMU|Kamu tidak boleh pulang sekarang.
+P4_S11_R4|GAKBOLEH PULANG SEKARANG KAMU|Kamu tidak boleh pulang sekarang.
+P5_S11_R4|GAKBOLEH PULANG SEKARANG KAMU|Kamu tidak boleh pulang sekarang.
 P1_S12_R1|IBU AKU PUNYA KUCING SAMA IKAN|Ibu aku punya kucing sama ikan.
 P2_S12_R1|IBU AKU PUNYA KUCING SAMA IKAN|Ibu aku punya kucing sama ikan.
 P3_S12_R1|IBU AKU PUNYA KUCING SAMA IKAN|Ibu aku punya kucing sama ikan.
@@ -179,6 +234,11 @@ P2_S12_R3|IBU AKU PUNYA KUCING SAMA IKAN|Ibu aku punya kucing sama ikan.
 P3_S12_R3|IBU AKU PUNYA KUCING SAMA IKAN|Ibu aku punya kucing sama ikan.
 P4_S12_R3|IBU AKU PUNYA KUCING SAMA IKAN|Ibu aku punya kucing sama ikan.
 P5_S12_R3|IBU AKU PUNYA KUCING SAMA IKAN|Ibu aku punya kucing sama ikan.
+P1_S12_R4|IBU AKU PUNYA KUCING SAMA IKAN|Ibu aku punya kucing sama ikan.
+P2_S12_R4|IBU AKU PUNYA KUCING SAMA IKAN|Ibu aku punya kucing sama ikan.
+P3_S12_R4|IBU AKU PUNYA KUCING SAMA IKAN|Ibu aku punya kucing sama ikan.
+P4_S12_R4|IBU AKU PUNYA KUCING SAMA IKAN|Ibu aku punya kucing sama ikan.
+P5_S12_R4|IBU AKU PUNYA KUCING SAMA IKAN|Ibu aku punya kucing sama ikan.
 P1_S13_R1|KAKAK AKU KASIH HADIAH BUAT AKU|Kakak saya memberi saya hadiah.
 P2_S13_R1|KAKAK AKU KASIH HADIAH BUAT AKU|Kakak saya memberi saya hadiah.
 P3_S13_R1|KAKAK AKU KASIH HADIAH BUAT AKU|Kakak saya memberi saya hadiah.
@@ -194,6 +254,11 @@ P2_S13_R3|KAKAK AKU KASIH HADIAH BUAT AKU|Kakak saya memberi saya hadiah.
 P3_S13_R3|KAKAK AKU KASIH HADIAH BUAT AKU|Kakak saya memberi saya hadiah.
 P4_S13_R3|KAKAK AKU KASIH HADIAH BUAT AKU|Kakak saya memberi saya hadiah.
 P5_S13_R3|KAKAK AKU KASIH HADIAH BUAT AKU|Kakak saya memberi saya hadiah.
+P1_S13_R4|KAKAK AKU KASIH HADIAH BUAT AKU|Kakak saya memberi saya hadiah.
+P2_S13_R4|KAKAK AKU KASIH HADIAH BUAT AKU|Kakak saya memberi saya hadiah.
+P3_S13_R4|KAKAK AKU KASIH HADIAH BUAT AKU|Kakak saya memberi saya hadiah.
+P4_S13_R4|KAKAK AKU KASIH HADIAH BUAT AKU|Kakak saya memberi saya hadiah.
+P5_S13_R4|KAKAK AKU KASIH HADIAH BUAT AKU|Kakak saya memberi saya hadiah.
 P1_S14_R1|KAMU BELAJAR BISINDO KAPAN|Kapan kamu belajar Bisindo?
 P2_S14_R1|KAMU BELAJAR BISINDO KAPAN|Kapan kamu belajar Bisindo?
 P3_S14_R1|KAMU BELAJAR BISINDO KAPAN|Kapan kamu belajar Bisindo?
@@ -209,6 +274,11 @@ P2_S14_R3|KAMU BELAJAR BISINDO KAPAN|Kapan kamu belajar Bisindo?
 P3_S14_R3|KAMU BELAJAR BISINDO KAPAN|Kapan kamu belajar Bisindo?
 P4_S14_R3|KAMU BELAJAR BISINDO KAPAN|Kapan kamu belajar Bisindo?
 P5_S14_R3|KAMU BELAJAR BISINDO KAPAN|Kapan kamu belajar Bisindo?
+P1_S14_R4|KAMU BELAJAR BISINDO KAPAN|Kapan kamu belajar Bisindo?
+P2_S14_R4|KAMU BELAJAR BISINDO KAPAN|Kapan kamu belajar Bisindo?
+P3_S14_R4|KAMU BELAJAR BISINDO KAPAN|Kapan kamu belajar Bisindo?
+P4_S14_R4|KAMU BELAJAR BISINDO KAPAN|Kapan kamu belajar Bisindo?
+P5_S14_R4|KAMU BELAJAR BISINDO KAPAN|Kapan kamu belajar Bisindo?
 P1_S15_R1|KAMU PERGI MANA|Kemana kamu mau pergi?
 P2_S15_R1|KAMU PERGI MANA|Kemana kamu mau pergi?
 P3_S15_R1|KAMU PERGI MANA|Kemana kamu mau pergi?
@@ -224,6 +294,11 @@ P2_S15_R3|KAMU PERGI MANA|Kemana kamu mau pergi?
 P3_S15_R3|KAMU PERGI MANA|Kemana kamu mau pergi?
 P4_S15_R3|KAMU PERGI MANA|Kemana kamu mau pergi?
 P5_S15_R3|KAMU PERGI MANA|Kemana kamu mau pergi?
+P1_S15_R4|KAMU PERGI MANA|Kemana kamu mau pergi?
+P2_S15_R4|KAMU PERGI MANA|Kemana kamu mau pergi?
+P3_S15_R4|KAMU PERGI MANA|Kemana kamu mau pergi?
+P4_S15_R4|KAMU PERGI MANA|Kemana kamu mau pergi?
+P5_S15_R4|KAMU PERGI MANA|Kemana kamu mau pergi?
 P1_S16_R1|KAMU PUNYA ANGGOTA KELUARGA BERAPA|Berapa jumlah anggota keluarga kamu?
 P2_S16_R1|KAMU PUNYA ANGGOTA KELUARGA BERAPA|Berapa jumlah anggota keluarga kamu?
 P3_S16_R1|KAMU PUNYA ANGGOTA KELUARGA BERAPA|Berapa jumlah anggota keluarga kamu?
@@ -239,6 +314,11 @@ P2_S16_R3|KAMU PUNYA ANGGOTA KELUARGA BERAPA|Berapa jumlah anggota keluarga kamu
 P3_S16_R3|KAMU PUNYA ANGGOTA KELUARGA BERAPA|Berapa jumlah anggota keluarga kamu?
 P4_S16_R3|KAMU PUNYA ANGGOTA KELUARGA BERAPA|Berapa jumlah anggota keluarga kamu?
 P5_S16_R3|KAMU PUNYA ANGGOTA KELUARGA BERAPA|Berapa jumlah anggota keluarga kamu?
+P1_S16_R4|KAMU PUNYA ANGGOTA KELUARGA BERAPA|Berapa jumlah anggota keluarga kamu?
+P2_S16_R4|KAMU PUNYA ANGGOTA KELUARGA BERAPA|Berapa jumlah anggota keluarga kamu?
+P3_S16_R4|KAMU PUNYA ANGGOTA KELUARGA BERAPA|Berapa jumlah anggota keluarga kamu?
+P4_S16_R4|KAMU PUNYA ANGGOTA KELUARGA BERAPA|Berapa jumlah anggota keluarga kamu?
+P5_S16_R4|KAMU PUNYA ANGGOTA KELUARGA BERAPA|Berapa jumlah anggota keluarga kamu?
 P1_S17_R1|KENAPA KAMU GAK MASUK KULIAH KEMARIN|Mengapa kemarin kamu tidak kuliah?
 P2_S17_R1|KENAPA KAMU GAK MASUK KULIAH KEMARIN|Mengapa kemarin kamu tidak kuliah?
 P3_S17_R1|KENAPA KAMU GAK MASUK KULIAH KEMARIN|Mengapa kemarin kamu tidak kuliah?
@@ -254,6 +334,11 @@ P2_S17_R3|KENAPA KAMU GAK MASUK KULIAH KEMARIN|Mengapa kemarin kamu tidak kuliah
 P3_S17_R3|KENAPA KAMU GAK MASUK KULIAH KEMARIN|Mengapa kemarin kamu tidak kuliah?
 P4_S17_R3|KENAPA KAMU GAK MASUK KULIAH KEMARIN|Mengapa kemarin kamu tidak kuliah?
 P5_S17_R3|KENAPA KAMU GAK MASUK KULIAH KEMARIN|Mengapa kemarin kamu tidak kuliah?
+P1_S17_R4|KENAPA KAMU GAK MASUK KULIAH KEMARIN|Mengapa kemarin kamu tidak kuliah?
+P2_S17_R4|KENAPA KAMU GAK MASUK KULIAH KEMARIN|Mengapa kemarin kamu tidak kuliah?
+P3_S17_R4|KENAPA KAMU GAK MASUK KULIAH KEMARIN|Mengapa kemarin kamu tidak kuliah?
+P4_S17_R4|KENAPA KAMU GAK MASUK KULIAH KEMARIN|Mengapa kemarin kamu tidak kuliah?
+P5_S17_R4|KENAPA KAMU GAK MASUK KULIAH KEMARIN|Mengapa kemarin kamu tidak kuliah?
 P1_S18_R1|KITA ISTIRAHAT JAM BERAPA|Jam berapa kita istirahat?
 P2_S18_R1|KITA ISTIRAHAT JAM BERAPA|Jam berapa kita istirahat?
 P3_S18_R1|KITA ISTIRAHAT JAM BERAPA|Jam berapa kita istirahat?
@@ -269,6 +354,11 @@ P2_S18_R3|KITA ISTIRAHAT JAM BERAPA|Jam berapa kita istirahat?
 P3_S18_R3|KITA ISTIRAHAT JAM BERAPA|Jam berapa kita istirahat?
 P4_S18_R3|KITA ISTIRAHAT JAM BERAPA|Jam berapa kita istirahat?
 P5_S18_R3|KITA ISTIRAHAT JAM BERAPA|Jam berapa kita istirahat?
+P1_S18_R4|KITA ISTIRAHAT JAM BERAPA|Jam berapa kita istirahat?
+P2_S18_R4|KITA ISTIRAHAT JAM BERAPA|Jam berapa kita istirahat?
+P3_S18_R4|KITA ISTIRAHAT JAM BERAPA|Jam berapa kita istirahat?
+P4_S18_R4|KITA ISTIRAHAT JAM BERAPA|Jam berapa kita istirahat?
+P5_S18_R4|KITA ISTIRAHAT JAM BERAPA|Jam berapa kita istirahat?
 P1_S19_R1|MANA IBU KAMU BAIK-BAIK ATAU TIDAK|Bagaimana keadaan ibumu?
 P2_S19_R1|MANA IBU KAMU BAIK-BAIK ATAU TIDAK|Bagaimana keadaan ibumu?
 P3_S19_R1|MANA IBU KAMU BAIK-BAIK ATAU TIDAK|Bagaimana keadaan ibumu?
@@ -284,6 +374,11 @@ P2_S19_R3|MANA IBU KAMU BAIK-BAIK ATAU TIDAK|Bagaimana keadaan ibumu?
 P3_S19_R3|MANA IBU KAMU BAIK-BAIK ATAU TIDAK|Bagaimana keadaan ibumu?
 P4_S19_R3|MANA IBU KAMU BAIK-BAIK ATAU TIDAK|Bagaimana keadaan ibumu?
 P5_S19_R3|MANA IBU KAMU BAIK-BAIK ATAU TIDAK|Bagaimana keadaan ibumu?
+P1_S19_R4|MANA IBU KAMU BAIK-BAIK ATAU TIDAK|Bagaimana keadaan ibumu?
+P2_S19_R4|MANA IBU KAMU BAIK-BAIK ATAU TIDAK|Bagaimana keadaan ibumu?
+P3_S19_R4|MANA IBU KAMU BAIK-BAIK ATAU TIDAK|Bagaimana keadaan ibumu?
+P4_S19_R4|MANA IBU KAMU BAIK-BAIK ATAU TIDAK|Bagaimana keadaan ibumu?
+P5_S19_R4|MANA IBU KAMU BAIK-BAIK ATAU TIDAK|Bagaimana keadaan ibumu?
 P1_S20_R1|NAMA ISYARAT KAMU APA|Nama isyarat kamu apa?
 P2_S20_R1|NAMA ISYARAT KAMU APA|Nama isyarat kamu apa?
 P3_S20_R1|NAMA ISYARAT KAMU APA|Nama isyarat kamu apa?
@@ -299,6 +394,11 @@ P2_S20_R3|NAMA ISYARAT KAMU APA|Nama isyarat kamu apa?
 P3_S20_R3|NAMA ISYARAT KAMU APA|Nama isyarat kamu apa?
 P4_S20_R3|NAMA ISYARAT KAMU APA|Nama isyarat kamu apa?
 P5_S20_R3|NAMA ISYARAT KAMU APA|Nama isyarat kamu apa?
+P1_S20_R4|NAMA ISYARAT KAMU APA|Nama isyarat kamu apa?
+P2_S20_R4|NAMA ISYARAT KAMU APA|Nama isyarat kamu apa?
+P3_S20_R4|NAMA ISYARAT KAMU APA|Nama isyarat kamu apa?
+P4_S20_R4|NAMA ISYARAT KAMU APA|Nama isyarat kamu apa?
+P5_S20_R4|NAMA ISYARAT KAMU APA|Nama isyarat kamu apa?
 P1_S21_R1|OBAT BISA BELI TOKO MANA|Di apotek mana obat ini bisa dibeli?
 P2_S21_R1|OBAT BISA BELI TOKO MANA|Di apotek mana obat ini bisa dibeli?
 P3_S21_R1|OBAT BISA BELI TOKO MANA|Di apotek mana obat ini bisa dibeli?
@@ -314,6 +414,11 @@ P2_S21_R3|OBAT BISA BELI TOKO MANA|Di apotek mana obat ini bisa dibeli?
 P3_S21_R3|OBAT BISA BELI TOKO MANA|Di apotek mana obat ini bisa dibeli?
 P4_S21_R3|OBAT BISA BELI TOKO MANA|Di apotek mana obat ini bisa dibeli?
 P5_S21_R3|OBAT BISA BELI TOKO MANA|Di apotek mana obat ini bisa dibeli?
+P1_S21_R4|OBAT BISA BELI TOKO MANA|Di apotek mana obat ini bisa dibeli?
+P2_S21_R4|OBAT BISA BELI TOKO MANA|Di apotek mana obat ini bisa dibeli?
+P3_S21_R4|OBAT BISA BELI TOKO MANA|Di apotek mana obat ini bisa dibeli?
+P4_S21_R4|OBAT BISA BELI TOKO MANA|Di apotek mana obat ini bisa dibeli?
+P5_S21_R4|OBAT BISA BELI TOKO MANA|Di apotek mana obat ini bisa dibeli?
 P1_S22_R1|ORANG JAHAT SANA PUKUL AKU BERULANG|Orang jahat di sana memukul saya berulang.
 P2_S22_R1|ORANG JAHAT SANA PUKUL AKU BERULANG|Orang jahat di sana memukul saya berulang.
 P3_S22_R1|ORANG JAHAT SANA PUKUL AKU BERULANG|Orang jahat di sana memukul saya berulang.
@@ -329,6 +434,11 @@ P2_S22_R3|ORANG JAHAT SANA PUKUL AKU BERULANG|Orang jahat di sana memukul saya b
 P3_S22_R3|ORANG JAHAT SANA PUKUL AKU BERULANG|Orang jahat di sana memukul saya berulang.
 P4_S22_R3|ORANG JAHAT SANA PUKUL AKU BERULANG|Orang jahat di sana memukul saya berulang.
 P5_S22_R3|ORANG JAHAT SANA PUKUL AKU BERULANG|Orang jahat di sana memukul saya berulang.
+P1_S22_R4|ORANG JAHAT SANA PUKUL AKU BERULANG|Orang jahat di sana memukul saya berulang.
+P2_S22_R4|ORANG JAHAT SANA PUKUL AKU BERULANG|Orang jahat di sana memukul saya berulang.
+P3_S22_R4|ORANG JAHAT SANA PUKUL AKU BERULANG|Orang jahat di sana memukul saya berulang.
+P4_S22_R4|ORANG JAHAT SANA PUKUL AKU BERULANG|Orang jahat di sana memukul saya berulang.
+P5_S22_R4|ORANG JAHAT SANA PUKUL AKU BERULANG|Orang jahat di sana memukul saya berulang.
 P1_S23_R1|POLISI SANA PUKUL PENCURI|Pencuri di sana dipukul polisi.
 P2_S23_R1|POLISI SANA PUKUL PENCURI|Pencuri di sana dipukul polisi.
 P3_S23_R1|POLISI SANA PUKUL PENCURI|Pencuri di sana dipukul polisi.
@@ -344,6 +454,11 @@ P2_S23_R3|POLISI SANA PUKUL PENCURI|Pencuri di sana dipukul polisi.
 P3_S23_R3|POLISI SANA PUKUL PENCURI|Pencuri di sana dipukul polisi.
 P4_S23_R3|POLISI SANA PUKUL PENCURI|Pencuri di sana dipukul polisi.
 P5_S23_R3|POLISI SANA PUKUL PENCURI|Pencuri di sana dipukul polisi.
+P1_S23_R4|POLISI SANA PUKUL PENCURI|Pencuri di sana dipukul polisi.
+P2_S23_R4|POLISI SANA PUKUL PENCURI|Pencuri di sana dipukul polisi.
+P3_S23_R4|POLISI SANA PUKUL PENCURI|Pencuri di sana dipukul polisi.
+P4_S23_R4|POLISI SANA PUKUL PENCURI|Pencuri di sana dipukul polisi.
+P5_S23_R4|POLISI SANA PUKUL PENCURI|Pencuri di sana dipukul polisi.
 P1_S24_R1|RUMAH DIMANA KAMU|Rumah kamu di mana?
 P2_S24_R1|RUMAH DIMANA KAMU|Rumah kamu di mana?
 P3_S24_R1|RUMAH DIMANA KAMU|Rumah kamu di mana?
@@ -359,6 +474,11 @@ P2_S24_R3|RUMAH DIMANA KAMU|Rumah kamu di mana?
 P3_S24_R3|RUMAH DIMANA KAMU|Rumah kamu di mana?
 P4_S24_R3|RUMAH DIMANA KAMU|Rumah kamu di mana?
 P5_S24_R3|RUMAH DIMANA KAMU|Rumah kamu di mana?
+P1_S24_R4|RUMAH DIMANA KAMU|Rumah kamu di mana?
+P2_S24_R4|RUMAH DIMANA KAMU|Rumah kamu di mana?
+P3_S24_R4|RUMAH DIMANA KAMU|Rumah kamu di mana?
+P4_S24_R4|RUMAH DIMANA KAMU|Rumah kamu di mana?
+P5_S24_R4|RUMAH DIMANA KAMU|Rumah kamu di mana?
 P1_S25_R1|SANA BERITA SUDAH BANYAK RIBUAN ORANG LIHAT|Berita di sana sudah dilihat oleh ribuan orang.
 P2_S25_R1|SANA BERITA SUDAH BANYAK RIBUAN ORANG LIHAT|Berita di sana sudah dilihat oleh ribuan orang.
 P3_S25_R1|SANA BERITA SUDAH BANYAK RIBUAN ORANG LIHAT|Berita di sana sudah dilihat oleh ribuan orang.
@@ -374,6 +494,11 @@ P2_S25_R3|SANA BERITA SUDAH BANYAK RIBUAN ORANG LIHAT|Berita di sana sudah dilih
 P3_S25_R3|SANA BERITA SUDAH BANYAK RIBUAN ORANG LIHAT|Berita di sana sudah dilihat oleh ribuan orang.
 P4_S25_R3|SANA BERITA SUDAH BANYAK RIBUAN ORANG LIHAT|Berita di sana sudah dilihat oleh ribuan orang.
 P5_S25_R3|SANA BERITA SUDAH BANYAK RIBUAN ORANG LIHAT|Berita di sana sudah dilihat oleh ribuan orang.
+P1_S25_R4|SANA BERITA SUDAH BANYAK RIBUAN ORANG LIHAT|Berita di sana sudah dilihat oleh ribuan orang.
+P2_S25_R4|SANA BERITA SUDAH BANYAK RIBUAN ORANG LIHAT|Berita di sana sudah dilihat oleh ribuan orang.
+P3_S25_R4|SANA BERITA SUDAH BANYAK RIBUAN ORANG LIHAT|Berita di sana sudah dilihat oleh ribuan orang.
+P4_S25_R4|SANA BERITA SUDAH BANYAK RIBUAN ORANG LIHAT|Berita di sana sudah dilihat oleh ribuan orang.
+P5_S25_R4|SANA BERITA SUDAH BANYAK RIBUAN ORANG LIHAT|Berita di sana sudah dilihat oleh ribuan orang.
 P1_S26_R1|SANA ENAK NASI PADANG TAPI MAHAL|Nasi padang di sana enak, tetapi mahal
 P2_S26_R1|SANA ENAK NASI PADANG TAPI MAHAL|Nasi padang di sana enak, tetapi mahal
 P3_S26_R1|SANA ENAK NASI PADANG TAPI MAHAL|Nasi padang di sana enak, tetapi mahal
@@ -389,6 +514,11 @@ P2_S26_R3|SANA ENAK NASI PADANG TAPI MAHAL|Nasi padang di sana enak, tetapi maha
 P3_S26_R3|SANA ENAK NASI PADANG TAPI MAHAL|Nasi padang di sana enak, tetapi mahal
 P4_S26_R3|SANA ENAK NASI PADANG TAPI MAHAL|Nasi padang di sana enak, tetapi mahal
 P5_S26_R3|SANA ENAK NASI PADANG TAPI MAHAL|Nasi padang di sana enak, tetapi mahal
+P1_S26_R4|SANA ENAK NASI PADANG TAPI MAHAL|Nasi padang di sana enak, tetapi mahal
+P2_S26_R4|SANA ENAK NASI PADANG TAPI MAHAL|Nasi padang di sana enak, tetapi mahal
+P3_S26_R4|SANA ENAK NASI PADANG TAPI MAHAL|Nasi padang di sana enak, tetapi mahal
+P4_S26_R4|SANA ENAK NASI PADANG TAPI MAHAL|Nasi padang di sana enak, tetapi mahal
+P5_S26_R4|SANA ENAK NASI PADANG TAPI MAHAL|Nasi padang di sana enak, tetapi mahal
 P1_S27_R1|SANA TOILET KOTOR|Toilet di sana kotor
 P2_S27_R1|SANA TOILET KOTOR|Toilet di sana kotor
 P3_S27_R1|SANA TOILET KOTOR|Toilet di sana kotor
@@ -404,6 +534,11 @@ P2_S27_R3|SANA TOILET KOTOR|Toilet di sana kotor
 P3_S27_R3|SANA TOILET KOTOR|Toilet di sana kotor
 P4_S27_R3|SANA TOILET KOTOR|Toilet di sana kotor
 P5_S27_R3|SANA TOILET KOTOR|Toilet di sana kotor
+P1_S27_R4|SANA TOILET KOTOR|Toilet di sana kotor
+P2_S27_R4|SANA TOILET KOTOR|Toilet di sana kotor
+P3_S27_R4|SANA TOILET KOTOR|Toilet di sana kotor
+P4_S27_R4|SANA TOILET KOTOR|Toilet di sana kotor
+P5_S27_R4|SANA TOILET KOTOR|Toilet di sana kotor
 P1_S28_R1|SEPATU DIA KOTOR|Sepatu dia kotor
 P2_S28_R1|SEPATU DIA KOTOR|Sepatu dia kotor
 P3_S28_R1|SEPATU DIA KOTOR|Sepatu dia kotor
@@ -419,6 +554,11 @@ P2_S28_R3|SEPATU DIA KOTOR|Sepatu dia kotor
 P3_S28_R3|SEPATU DIA KOTOR|Sepatu dia kotor
 P4_S28_R3|SEPATU DIA KOTOR|Sepatu dia kotor
 P5_S28_R3|SEPATU DIA KOTOR|Sepatu dia kotor
+P1_S28_R4|SEPATU DIA KOTOR|Sepatu dia kotor
+P2_S28_R4|SEPATU DIA KOTOR|Sepatu dia kotor
+P3_S28_R4|SEPATU DIA KOTOR|Sepatu dia kotor
+P4_S28_R4|SEPATU DIA KOTOR|Sepatu dia kotor
+P5_S28_R4|SEPATU DIA KOTOR|Sepatu dia kotor
 P1_S29_R1|TONG-SAMPAH ADA SEMUT BANYAK|Tempat sampah banyak semut
 P2_S29_R1|TONG-SAMPAH ADA SEMUT BANYAK|Tempat sampah banyak semut
 P3_S29_R1|TONG-SAMPAH ADA SEMUT BANYAK|Tempat sampah banyak semut
@@ -434,6 +574,11 @@ P2_S29_R3|TONG-SAMPAH ADA SEMUT BANYAK|Tempat sampah banyak semut
 P3_S29_R3|TONG-SAMPAH ADA SEMUT BANYAK|Tempat sampah banyak semut
 P4_S29_R3|TONG-SAMPAH ADA SEMUT BANYAK|Tempat sampah banyak semut
 P5_S29_R3|TONG-SAMPAH ADA SEMUT BANYAK|Tempat sampah banyak semut
+P1_S29_R4|TONG-SAMPAH ADA SEMUT BANYAK|Tempat sampah banyak semut
+P2_S29_R4|TONG-SAMPAH ADA SEMUT BANYAK|Tempat sampah banyak semut
+P3_S29_R4|TONG-SAMPAH ADA SEMUT BANYAK|Tempat sampah banyak semut
+P4_S29_R4|TONG-SAMPAH ADA SEMUT BANYAK|Tempat sampah banyak semut
+P5_S29_R4|TONG-SAMPAH ADA SEMUT BANYAK|Tempat sampah banyak semut
 P1_S30_R1|ULAR SANA MAKAN KAMBING|Kambing di sana dimakan ular
 P2_S30_R1|ULAR SANA MAKAN KAMBING|Kambing di sana dimakan ular
 P3_S30_R1|ULAR SANA MAKAN KAMBING|Kambing di sana dimakan ular
@@ -449,3 +594,8 @@ P2_S30_R3|ULAR SANA MAKAN KAMBING|Kambing di sana dimakan ular
 P3_S30_R3|ULAR SANA MAKAN KAMBING|Kambing di sana dimakan ular
 P4_S30_R3|ULAR SANA MAKAN KAMBING|Kambing di sana dimakan ular
 P5_S30_R3|ULAR SANA MAKAN KAMBING|Kambing di sana dimakan ular
+P1_S30_R4|ULAR SANA MAKAN KAMBING|Kambing di sana dimakan ular
+P2_S30_R4|ULAR SANA MAKAN KAMBING|Kambing di sana dimakan ular
+P3_S30_R4|ULAR SANA MAKAN KAMBING|Kambing di sana dimakan ular
+P4_S30_R4|ULAR SANA MAKAN KAMBING|Kambing di sana dimakan ular
+P5_S30_R4|ULAR SANA MAKAN KAMBING|Kambing di sana dimakan ular
