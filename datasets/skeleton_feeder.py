@@ -21,13 +21,13 @@ sys.path.append("..")
 class SkeletonFeeder(data.Dataset):
 
     AUGMENTATION_REGISTRY = {
-        "TemporalDropout": (skeleton_augmentation.TemporalDropout, dict(max_dp=0.25)),
-        "TemporalCrop":    (skeleton_augmentation.TemporalCrop,    dict(max_dp=0.2)),
-        "TemporalRescale": (skeleton_augmentation.TemporalRescale, dict(temp_scaling=0.2)),
-        "Jitter":          (skeleton_augmentation.Jitter,          dict(std_dev=0.01)),
-        "Scale":           (skeleton_augmentation.Scale,           dict(scale_range=(0.8, 1.2))),
-        "Dropout_kp":      (skeleton_augmentation.Dropout_kp,      dict(drop_prob=0.1)),
-        "Spatial_flip":    (skeleton_augmentation.Spatial_flip,    dict(prob=0.5)),
+        "TemporalDropout": skeleton_augmentation.TemporalDropout,
+        "TemporalCrop":    skeleton_augmentation.TemporalCrop,
+        "TemporalRescale": skeleton_augmentation.TemporalRescale,
+        "Jitter":          skeleton_augmentation.Jitter,
+        "Scale":           skeleton_augmentation.Scale,
+        "Dropout_kp":      skeleton_augmentation.Dropout_kp,
+        "Spatial_flip":    skeleton_augmentation.Spatial_flip,
     }
 
     def __init__(
