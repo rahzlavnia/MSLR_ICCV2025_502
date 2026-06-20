@@ -19,7 +19,7 @@ feeder_args:
   split: &split [21]
   used_part: &used_part ['left_hand']
   augmentation_types: []
-  # norm_point: ???         # TODO: isi setelah lihat hasil B1 vs B2
+  norm_point: [0, 21]
 
 model: TwoStream_Cosign
 model_args:

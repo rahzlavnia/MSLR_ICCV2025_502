@@ -20,7 +20,7 @@ feeder_args:
   used_part: &used_part ['hand21']
   augmentation_types: ['Scale']
   downsampling: false
-  norm_point: null
+  norm_point: [0, 21]
 
 model: TwoStream_Cosign
 model_args:

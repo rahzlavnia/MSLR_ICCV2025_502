@@ -19,7 +19,7 @@ feeder_args:
   split: &split [21]
   used_part: &used_part ['right_hand']
   augmentation_types: ['TemporalRescale']
-  # norm_point: ???         # TODO: isi setelah lihat hasil B1 vs B2
+  norm_point: [0, 21]
   # downsampling: ???       # TODO: isi setelah lihat hasil terbaik D/O group
   # downsampling_position: ???
   # downsampling_ratio: 0.5
