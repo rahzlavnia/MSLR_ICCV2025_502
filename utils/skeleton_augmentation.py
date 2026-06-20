@@ -117,12 +117,12 @@ class TemporalDropout(object):
         self.max_dp = max_dp
 
     def __call__(self, skeleton, **kwargs):
-        vid_len = len(clip)
+        vid_len = len(skeleton)
         dp_len = int(vid_len * self.max_dp * np.random.random())
         start = np.random.randint(0, vid_len - dp_len + 1)
         end = start + dp_len
         index = list(range(0, start)) + list(range(end, vid_len))
-        return clip[index]
+        return skeleton[index]
 
 
 class TemporalCrop(object):
