@@ -61,7 +61,7 @@ class Jitter(object):
         std_dev (float): Standard deviation of the Gaussian noise.
     """
 
-    def __init__(self, std_dev=0.01) -> None:
+    def __init__(self, std_dev=0.006) -> None:
         self.std_dev = std_dev
 
     def __call__(self, skeleton):
@@ -198,7 +198,7 @@ class TemporalRescale(object):
     def __call__(self, clip):
         # clip shape: T X N X 2
         vid_len = len(clip)
-        new_len = int(vid_len * (self.L + (self.U - self.L) * np.random.random()))
+        new_len = int(vid_len * np.random.uniform(self.L, self.U))
         if new_len < self.min_len:
             new_len = self.min_len
         if new_len > self.max_len:

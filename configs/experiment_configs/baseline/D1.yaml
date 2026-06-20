@@ -1,4 +1,7 @@
-work_dir: ./work_dir/us/
+# Experiment D1: Jitter only, no downsampling
+work_dir: ./work_dir/experiments/D1/
+google_drive_dir: ''
+sync_to_drive: false
 device: 0
 phase: train
 save_interval: 1
@@ -6,25 +9,18 @@ random_seed: 123
 eval_interval: 1
 log_interval: 100
 evaluate_tool: sclite
-sync_to_drive: false
-google_drive_dir: ""
-
-# feeder args
 
 feeder: SkeletonFeeder
-# [si] for signer independent and [us] for unseen sentence
-dataset: mslr_iccv_us
-num_worker: 10
+dataset: mslr_iccv_si
+num_worker: 2
 feeder_args:
-  setting: us
+  setting: si
   datatype: skeleton
-  split: &split [25, 46, 67, 86]
-  norm_point: [0, 25, 46, 67]
-  used_part: &used_part ['body', 'hand21', 'mouth_8']
-
-# model args
-
-# load_weights:
+  split: &split [21, 42]
+  used_part: &used_part ['hand21']
+  augmentation_types: ['Jitter']
+  downsampling: false
+  norm_point: null
 
 model: TwoStream_Cosign
 model_args:
@@ -34,8 +30,8 @@ model_args:
     temporal_kernel: 5
     hidden_size: 1024
     modes: *used_part
-    level: '0'
-    adaptive: True
+    level: '1'
+    adaptive: true
     CR_args:
       clip_length: 25
       ratio: 0.2
@@ -55,18 +51,14 @@ model_args:
     CR_Seq_fusion: 2.0
   norm_scale: 32
 
-# optim args
-
-batch_size: 2
-test_batch_size: 2
+batch_size: 8
+test_batch_size: 1
 optimizer_args:
-  base_lr: 0.0002
+  base_lr: 0.0004
   learning_ratio: 1
   nesterov: false
   optimizer: AdamW
   start_epoch: 0
-  step:
-  - 20
-  - 35
+  step: [20, 35]
   weight_decay: 0.0001
 num_epoch: 40

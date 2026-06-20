@@ -1,4 +1,7 @@
-work_dir: ./work_dir/si/
+# Experiment M4: LH + Scale
+work_dir: ./work_dir/experiments/M4/
+google_drive_dir: ''
+sync_to_drive: false
 device: 0
 phase: train
 save_interval: 1
@@ -6,27 +9,20 @@ random_seed: 123
 eval_interval: 1
 log_interval: 100
 evaluate_tool: sclite
-sync_to_drive: false
-google_drive_dir: ""
-
-# feeder args
 
 feeder: SkeletonFeeder
-# [si] for signer independent and [us] for unseen sentence
 dataset: mslr_iccv_si
 num_worker: 2
 feeder_args:
   setting: si
   datatype: skeleton
-  split: &split [21, 42]
-  norm_point: [0, 21]
-  used_part: &used_part ['hand21']
-  augmentation_types: []
-  downsampling: false
-
-# model args
-
-# load_weights:
+  split: &split [21]
+  used_part: &used_part ['left_hand']
+  augmentation_types: ['Scale']
+  # norm_point: ???         # TODO: isi setelah lihat hasil B1 vs B2
+  # downsampling: ???       # TODO: isi setelah lihat hasil terbaik D/O group
+  # downsampling_position: ???
+  # downsampling_ratio: 0.5
 
 model: TwoStream_Cosign
 model_args:
@@ -37,7 +33,7 @@ model_args:
     hidden_size: 1024
     modes: *used_part
     level: '1'
-    adaptive: True
+    adaptive: true
     CR_args:
       clip_length: 25
       ratio: 0.2
@@ -57,8 +53,6 @@ model_args:
     CR_Seq_fusion: 2.0
   norm_scale: 32
 
-# optim args
-
 batch_size: 8
 test_batch_size: 1
 optimizer_args:
@@ -67,8 +61,6 @@ optimizer_args:
   nesterov: false
   optimizer: AdamW
   start_epoch: 0
-  step:
-  - 20
-  - 35
+  step: [20, 35]
   weight_decay: 0.0001
 num_epoch: 40
