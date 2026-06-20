@@ -21,6 +21,8 @@ feeder_args:
   split: &split [21, 42]
   norm_point: [0, 21]
   used_part: &used_part ['hand21']
+  augmentation_types: []
+  downsampling: false
 
 # model args
 

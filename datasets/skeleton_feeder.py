@@ -19,6 +19,17 @@ from itertools import chain
 sys.path.append("..")
 
 class SkeletonFeeder(data.Dataset):
+
+    AUGMENTATION_REGISTRY = {
+        "TemporalDropout": (skeleton_augmentation.TemporalDropout, dict(max_dp=0.25)),
+        "TemporalCrop":    (skeleton_augmentation.TemporalCrop,    dict(max_dp=0.2)),
+        "TemporalRescale": (skeleton_augmentation.TemporalRescale, dict(temp_scaling=0.2)),
+        "Jitter":          (skeleton_augmentation.Jitter,          dict(std_dev=0.01)),
+        "Scale":           (skeleton_augmentation.Scale,           dict(scale_range=(0.8, 1.2))),
+        "Dropout_kp":      (skeleton_augmentation.Dropout_kp,      dict(drop_prob=0.1)),
+        "Spatial_flip":    (skeleton_augmentation.Spatial_flip,    dict(prob=0.5)),
+    }
+
     def __init__(
         self,
         gloss_dict,
@@ -32,6 +43,10 @@ class SkeletonFeeder(data.Dataset):
         norm_point=None,
         used_part=None,
         dataset_root=None,
+        augmentation_types=None,
+        downsampling=False,
+        downsampling_position="after",
+        downsampling_ratio=0.5,
     ):
         self.mode = mode
         self.mode_list = mode.split("_")
@@ -84,6 +99,15 @@ class SkeletonFeeder(data.Dataset):
         self.norm_point = norm_point
         if norm_point is None:
             print('no centeralization')
+
+        self.augmentation_types = augmentation_types if augmentation_types is not None else []
+        self.downsampling = downsampling
+        self.downsampling_ratio = downsampling_ratio
+        self.downsampling_position = downsampling_position
+        assert self.downsampling_position in ("before", "after"), (
+            f"downsampling_position harus 'before'/'after', dapat: {downsampling_position}"
+        )
+
         self.data_aug = self.pose_transform()
     
     def __getitem__(self, idx):
@@ -185,27 +209,44 @@ class SkeletonFeeder(data.Dataset):
             [input_data, origin_input_data[:, :, 2:6], conf.unsqueeze(-1)], dim=-1
         )
 
+    def _build_augmentation_list(self):
+        transforms = []
+        for entry in self.augmentation_types:
+            if isinstance(entry, str):
+                name, override_args = entry, {}
+            else:
+                name = entry["type"]
+                override_args = entry.get("args", {})
+            if name not in self.AUGMENTATION_REGISTRY:
+                raise ValueError(
+                    f"augmentation_types '{name}' tidak dikenal. "
+                    f"Pilihan: {list(self.AUGMENTATION_REGISTRY.keys())}"
+                )
+            cls, default_args = self.AUGMENTATION_REGISTRY[name]
+            transforms.append(cls(**{**default_args, **override_args}))
+        return transforms
+
     def pose_transform(self):
+        downsample_tf = skeleton_augmentation.Downsample(
+            ratio=self.downsampling_ratio,
+            random_offset=(self.transform_mode == "train"),
+        )
+
         if self.transform_mode == "train":
-            print("Apply training transform.")
-            return skeleton_augmentation.Compose(
-                    [
-                        # Signer independent
-                        # skeleton_augmentation.TemporalDropout(0.25),
-                        # skeleton_augmentation.Jitter(),
-                        # Unseen sentence
-                        # skeleton_augmentation.TemporalDropout(0.15),
-                        skeleton_augmentation.ToTensor(),
-                    ]
-                )                
+            transforms = []
+            if self.downsampling and self.downsampling_position == "before":
+                transforms.append(downsample_tf)            # O-group: downsample -> augment
+            transforms.extend(self._build_augmentation_list())
+            if self.downsampling and self.downsampling_position == "after":
+                transforms.append(downsample_tf)             # D-group: augment -> downsample
         else:
-            print("Apply testing transform.")
-            return skeleton_augmentation.Compose(
-                [
-                    # skeleton_augmentation.TemporalRescale_test(),
-                    skeleton_augmentation.ToTensor(),
-                ]
-            )
+            transforms = []
+            if self.downsampling:
+                transforms.append(downsample_tf)
+
+        transforms.append(skeleton_augmentation.ToTensor())
+        print(f"[{self.transform_mode}] pipeline: {[t.__class__.__name__ for t in transforms]}")
+        return skeleton_augmentation.Compose(transforms)
 
     def __len__(self):
         return len(self.inputs_list)
