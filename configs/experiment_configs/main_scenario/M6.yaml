@@ -11,7 +11,7 @@ log_interval: 100
 evaluate_tool: sclite
 
 feeder: SkeletonFeeder
-dataset: mslr_iccv_si
+dataset: bisindo
 num_worker: 2
 feeder_args:
   setting: si

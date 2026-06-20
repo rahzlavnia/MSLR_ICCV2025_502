@@ -1,4 +1,4 @@
-dataset_root: ./datasets/mslr2025
+dataset_root: ./datasets
 dict_path: ./datasets/mslr2025/global_gloss_dict.json
 evaluation_dir: ./datasets/mslr2025
 evaluation_prefix: mslr-groundtruth
