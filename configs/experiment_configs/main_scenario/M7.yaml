@@ -19,10 +19,10 @@ feeder_args:
   split: &split [21]
   used_part: &used_part ['right_hand']
   augmentation_types: ['Jitter']
-  norm_point: [0, 21]
-  # downsampling: ???       # TODO: isi setelah lihat hasil terbaik D/O group
-  # downsampling_position: ???
-  # downsampling_ratio: 0.5
+  norm_point: [0]
+  downsampling: true
+  downsampling_position: before
+  downsampling_ratio: 0.5
 
 model: TwoStream_Cosign
 model_args:

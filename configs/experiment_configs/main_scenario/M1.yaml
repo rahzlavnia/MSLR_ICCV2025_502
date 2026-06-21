@@ -19,7 +19,7 @@ feeder_args:
   split: &split [21]
   used_part: &used_part ['left_hand']
   augmentation_types: []
-  norm_point: [0, 21]
+  norm_point: [0]
 
 model: TwoStream_Cosign
 model_args:
