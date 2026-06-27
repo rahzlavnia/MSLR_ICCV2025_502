@@ -83,10 +83,10 @@ def seq_eval(
             real_model = model.module if isinstance(model, torch.nn.DataParallel) else model
             
             # Explicit Decoding
-            start_time_decoding = time.time()
             conv_sents_fusion = real_model.decoder.decode(
                 ret_dict['conv_logits_fusion'] * real_model.norm_scale, ret_dict['feat_len'], batch_first=False, probs=False
             )
+            start_time_decoding = time.time()
             recognized_sents_fusion = real_model.decoder.decode(
                 ret_dict['seq_logits_fusion'] * real_model.norm_scale, ret_dict['feat_len'], batch_first=False, probs=False
             )
