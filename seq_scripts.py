@@ -73,11 +73,14 @@ def seq_eval(
         
         with torch.no_grad():
             # W/O Decoding Forward Pass
+            torch.cuda.synchronize()
             start_time_wo = time.time()
             ret_dict = model(data)  # Forward pass tanpa gradien dan tanpa decoding
+            torch.cuda.synchronize()
             end_time_wo = time.time()
             
             # W/ Decoding = W/O Decoding time + Decoding Time
+            torch.cuda.synchronize()
             real_model = model.module if isinstance(model, torch.nn.DataParallel) else model
             
             # Explicit Decoding
@@ -88,6 +91,7 @@ def seq_eval(
             recognized_sents_fusion = real_model.decoder.decode(
                 ret_dict['seq_logits_fusion'] * real_model.norm_scale, ret_dict['feat_len'], batch_first=False, probs=False
             )
+            torch.cuda.synchronize()
             end_time_decoding = time.time()
 
         total_inference_time_wo_decoding += (end_time_wo - start_time_wo)
