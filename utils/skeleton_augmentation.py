@@ -100,7 +100,6 @@ class Jitter(object):
         noise = np.random.normal(loc=0, scale=self.std_dev, size=skeleton.shape)
         return skeleton + noise
 
-
 class TemporalDropout(object):
     """
     Apply temporal dropout by randomly removing a contiguous segment of frames.
