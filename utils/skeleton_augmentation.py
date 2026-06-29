@@ -6,34 +6,34 @@ EPS = 1e-4
 
 SENTENCE_LENGTH_BOUNDS = {
     "S01": {"min_len": 115, "max_len": 245},
-    "S02": {"min_len": 179, "max_len": 261},
-    "S03": {"min_len": 99, "max_len": 180},
-    "S04": {"min_len": 184, "max_len": 323},
-    "S05": {"min_len": 172, "max_len": 435},
-    "S06": {"min_len": 110, "max_len": 150},
-    "S07": {"min_len": 220, "max_len": 365},
-    "S08": {"min_len": 159, "max_len": 315},
-    "S09": {"min_len": 194, "max_len": 339},
-    "S10": {"min_len": 95, "max_len": 185},
-    "S11": {"min_len": 110, "max_len": 215},
-    "S12": {"min_len": 200, "max_len": 340},
+    "S02": {"min_len": 179, "max_len": 255},
+    "S03": {"min_len": 105, "max_len": 180},
+    "S04": {"min_len": 184, "max_len": 315},
+    "S05": {"min_len": 172, "max_len": 485},
+    "S06": {"min_len": 110, "max_len": 235},
+    "S07": {"min_len": 220, "max_len": 390},
+    "S08": {"min_len": 159, "max_len": 380},
+    "S09": {"min_len": 194, "max_len": 310},
+    "S10": {"min_len":  95, "max_len": 185},
+    "S11": {"min_len": 123, "max_len": 215},
+    "S12": {"min_len": 200, "max_len": 335},
     "S13": {"min_len": 150, "max_len": 290},
-    "S14": {"min_len": 133, "max_len": 230},
-    "S15": {"min_len": 94, "max_len": 184},
+    "S14": {"min_len": 135, "max_len": 330},
+    "S15": {"min_len":  95, "max_len": 210},
     "S16": {"min_len": 154, "max_len": 320},
     "S17": {"min_len": 185, "max_len": 330},
     "S18": {"min_len": 127, "max_len": 240},
-    "S19": {"min_len": 155, "max_len": 335},
-    "S20": {"min_len": 96, "max_len": 220},
+    "S19": {"min_len": 155, "max_len": 380},
+    "S20": {"min_len":  96, "max_len": 220},
     "S21": {"min_len": 164, "max_len": 283},
-    "S22": {"min_len": 179, "max_len": 329},
+    "S22": {"min_len": 179, "max_len": 375},
     "S23": {"min_len": 110, "max_len": 265},
-    "S24": {"min_len": 81, "max_len": 165},
-    "S25": {"min_len": 203, "max_len": 450},
+    "S24": {"min_len":  81, "max_len": 165},
+    "S25": {"min_len": 203, "max_len": 465},
     "S26": {"min_len": 183, "max_len": 310},
-    "S27": {"min_len": 94, "max_len": 160},
-    "S28": {"min_len": 89, "max_len": 189},
-    "S29": {"min_len": 145, "max_len": 235},
+    "S27": {"min_len":  95, "max_len": 240},
+    "S28": {"min_len":  91, "max_len": 210},
+    "S29": {"min_len": 145, "max_len": 230},
     "S30": {"min_len": 141, "max_len": 260},
 }
 
@@ -103,9 +103,6 @@ class Jitter(object):
 class TemporalDropout(object):
     """
     Apply temporal dropout by randomly removing a contiguous segment of frames.
-
-    NOTE: downsampling is NO LONGER applied here. To reproduce the legacy
-    behaviour, follow this transform with ``Downsample(ratio=0.5)``.
 
     Args:
         max_dp (float): Maximum dropout proportion. Actual dropout length
