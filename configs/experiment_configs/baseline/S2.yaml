@@ -1,5 +1,5 @@
 # Experiment O4: Downsampling then TemporalDropout (DS→aug)
-work_dir: ./work_dir/experiments/O4/
+work_dir: ./work_dir/experiments/S2/
 google_drive_dir: ''
 sync_to_drive: false
 device: 0
