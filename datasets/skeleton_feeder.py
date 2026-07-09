@@ -80,8 +80,8 @@ class SkeletonFeeder(data.Dataset):
                 self.inputs_list.append(item)
             else:
                 print(item)
-        self.norm_div = 0.5
-        # self.norm_div = (10240 - 1) / 2
+        self.norm_div = 0.5 # (proposed value)
+        # self.norm_div = (10240 - 1) / 2 (baseline value)
         print(mode, len(self))
 
         if self.data_type == 'skeleton':

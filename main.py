@@ -40,6 +40,14 @@ class SLRProcessor(object):
             os.makedirs(self.arg.work_dir)
         with open('{}/config.yaml'.format(self.arg.work_dir), 'w') as f:
             yaml.dump(arg_dict, f)
+            
+        if '/experiments/' in self.arg.work_dir:
+            self.model_dir = self.arg.work_dir.replace('/experiments/', '/model/')
+        else:
+            self.model_dir = os.path.join(self.arg.work_dir, 'model') + '/'
+            
+        if not os.path.exists(self.model_dir):
+            os.makedirs(self.model_dir)
 
     def loading(self):
         self.device.set_device(self.arg.device)
@@ -196,7 +204,7 @@ class SLRProcessor(object):
                 dev_error = self.test('dev', epoch)
                 self.recoder.print_log("Dev WER: {:05.2f}%".format(dev_error))
             if save_model:
-                self.custom_save_model(dev_error, epoch, self.arg.work_dir)
+                self.custom_save_model(dev_error, epoch, self.model_dir)
         self.sync_workdir_to_google_drive()
 
     def test(self, mode, epoch):

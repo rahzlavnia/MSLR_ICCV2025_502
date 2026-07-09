@@ -103,6 +103,9 @@ def seq_eval(
     sps_wo = total_sequences / total_inference_time_wo_decoding if total_inference_time_wo_decoding > 0 else 0
     sps_w = total_sequences / total_inference_time_w_decoding if total_inference_time_w_decoding > 0 else 0
     
+    recoder.print_log(f"N seq (Total Sequence)       : {total_sequences}")
+    recoder.print_log(f"Inference Time w/o Decoding  : {total_inference_time_wo_decoding:.4f} s")
+    recoder.print_log(f"Inference Time w/ Decoding   : {total_inference_time_w_decoding:.4f} s")
     recoder.print_log(f"Inference Speed w/o Decoding : {sps_wo:.2f} seq/s")
     recoder.print_log(f"Inference Speed w/ Decoding  : {sps_w:.2f} seq/s")
 
