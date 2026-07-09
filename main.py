@@ -11,7 +11,7 @@ import yaml
 import json
 import faulthandler
 faulthandler.enable()
-from seq_scripts import seq_train, seq_eval
+from seq_scripts import seq_train, seq_eval, seq_speed_test
 import slr_network
 
 
@@ -222,6 +222,50 @@ class SLRProcessor(object):
         )
         return wer
 
+    def speed_test(self):
+        self.recoder.print_log('Model:   {}.'.format(self.arg.model))
+        self.recoder.print_log('Weights: {}.'.format(self.arg.load_weights))
+        self.recoder.print_log('--- Speed Testing ---')
+        
+        import csv
+        model_id = os.path.basename(os.path.normpath(self.arg.work_dir))
+        csv_file = os.path.join(self.model_dir, f'{model_id}_speed_test.csv')
+        
+        num_warmup = 5
+        num_test = 25
+        total_iter = num_warmup + num_test
+        
+        def fmt(val):
+            return f"{val:.2f}".replace('.', ',')
+            
+        with open(csv_file, 'w', newline='') as f:
+            writer = csv.writer(f, delimiter=';')
+            writer.writerow(['ID', 'Iteration', 'Nseq (dev)', 'Tinfer (dev)', 'Nseq (test mj)', 'Tinfer (test mj)', 'Nseq (test mn)', 'Tinfer (test mn)', 'Inference Speed (Seq/s)'])
+            
+            for i in range(1, total_iter + 1):
+                self.recoder.print_log(f'Iteration {i}/{total_iter} ...')
+                
+                nseq_dev, time_dev = seq_speed_test(self.data_loader['dev'], self.model, self.device)
+                nseq_mj, time_mj = seq_speed_test(self.data_loader['test_si_major'], self.model, self.device)
+                nseq_mn, time_mn = seq_speed_test(self.data_loader['test_si_minor'], self.model, self.device)
+                
+                if i > num_warmup:
+                    iteration_label = i - num_warmup
+                    total_seq = nseq_dev + nseq_mj + nseq_mn
+                    total_time = time_dev + time_mj + time_mn
+                    speed = total_seq / total_time if total_time > 0 else 0
+                    
+                    writer.writerow([
+                        model_id, iteration_label, 
+                        nseq_dev, fmt(time_dev), 
+                        nseq_mj, fmt(time_mj), 
+                        nseq_mn, fmt(time_mn), 
+                        fmt(speed)
+                    ])
+                    f.flush()
+                
+        self.recoder.print_log(f'Speed test results saved to {csv_file}')
+
     def start(self):
         if self.arg.phase == 'train':
             self.train()
@@ -236,6 +280,8 @@ class SLRProcessor(object):
             self.test('test_si_minor', 6667)
             self.recoder.print_log('Evaluation Done.\n')
             self.sync_workdir_to_google_drive()
+        elif self.arg.phase == 'speed_test':
+            self.speed_test()
 
 if __name__ == '__main__':
     sparser = utils.get_parser()

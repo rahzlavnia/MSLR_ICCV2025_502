@@ -193,3 +193,33 @@ def write2file(path, info, output):
                     word[0], 
                 )
             )
+
+def seq_speed_test(loader, model, device):
+    model.eval() 
+    total_inference_time_w_decoding = 0.0
+    total_sequences = 0
+    
+    for batch_idx, data in enumerate(loader):
+        data = device.dict_data_to_device(data)  
+        batch_sequences = len(data['origin_info'])
+        data['skip_decoding'] = True 
+        
+        with torch.no_grad():
+            torch.cuda.synchronize()
+            start_time_wo = time.time()
+            ret_dict = model(data)
+            torch.cuda.synchronize()
+            end_time_wo = time.time()
+            
+            real_model = model.module if isinstance(model, torch.nn.DataParallel) else model
+            
+            start_time_decoding = time.time()
+            recognized_sents_fusion = real_model.decoder.decode(
+                ret_dict['seq_logits_fusion'] * real_model.norm_scale, ret_dict['feat_len'], batch_first=False, probs=False
+            )
+            end_time_decoding = time.time()
+
+        total_inference_time_w_decoding += (end_time_wo - start_time_wo) + (end_time_decoding - start_time_decoding)
+        total_sequences += batch_sequences
+
+    return total_sequences, total_inference_time_w_decoding
