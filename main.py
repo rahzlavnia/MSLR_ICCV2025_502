@@ -227,6 +227,11 @@ class SLRProcessor(object):
         self.recoder.print_log('Weights: {}.'.format(self.arg.load_weights))
         self.recoder.print_log('--- Speed Testing ---')
         
+        self.arg.test_batch_size = 1
+        dev_loader = self.build_dataloader(self.dataset['dev'], 'dev', False)
+        test_mj_loader = self.build_dataloader(self.dataset['test_si_major'], 'test_si_major', False)
+        test_mn_loader = self.build_dataloader(self.dataset['test_si_minor'], 'test_si_minor', False)
+        
         import csv
         model_id = os.path.basename(os.path.normpath(self.arg.work_dir))
         csv_file = os.path.join(self.model_dir, f'{model_id}_speed_test.csv')
@@ -245,9 +250,9 @@ class SLRProcessor(object):
             for i in range(1, total_iter + 1):
                 self.recoder.print_log(f'Iteration {i}/{total_iter} ...')
                 
-                nseq_dev, time_dev = seq_speed_test(self.data_loader['dev'], self.model, self.device)
-                nseq_mj, time_mj = seq_speed_test(self.data_loader['test_si_major'], self.model, self.device)
-                nseq_mn, time_mn = seq_speed_test(self.data_loader['test_si_minor'], self.model, self.device)
+                nseq_dev, time_dev = seq_speed_test(dev_loader, self.model, self.device)
+                nseq_mj, time_mj = seq_speed_test(test_mj_loader, self.model, self.device)
+                nseq_mn, time_mn = seq_speed_test(test_mn_loader, self.model, self.device)
                 
                 if i > num_warmup:
                     iteration_label = i - num_warmup
