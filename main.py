@@ -237,7 +237,7 @@ class SLRProcessor(object):
         csv_file = os.path.join(self.model_dir, f'{model_id}_speed_test.csv')
         
         num_warmup = 5
-        num_test = 5
+        num_test = 100
         total_iter = num_warmup + num_test
         
         def fmt(val):
@@ -257,14 +257,20 @@ class SLRProcessor(object):
                 if i > num_warmup:
                     iteration_label = i - num_warmup
                     total_seq = nseq_dev + nseq_mj + nseq_mn
-                    total_time = time_dev + time_mj + time_mn
+                    
+                    # Round values to 2 decimal places first to match the exported CSV format mathematically
+                    r_time_dev = round(time_dev, 2)
+                    r_time_mj = round(time_mj, 2)
+                    r_time_mn = round(time_mn, 2)
+                    
+                    total_time = r_time_dev + r_time_mj + r_time_mn
                     speed = total_seq / total_time if total_time > 0 else 0
                     
                     writer.writerow([
                         model_id, iteration_label, 
-                        nseq_dev, fmt(time_dev), 
-                        nseq_mj, fmt(time_mj), 
-                        nseq_mn, fmt(time_mn), 
+                        nseq_dev, fmt(r_time_dev), 
+                        nseq_mj, fmt(r_time_mj), 
+                        nseq_mn, fmt(r_time_mn), 
                         fmt(speed)
                     ])
                     f.flush()
