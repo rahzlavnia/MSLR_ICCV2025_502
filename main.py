@@ -237,7 +237,7 @@ class SLRProcessor(object):
         csv_file = os.path.join(self.model_dir, f'{model_id}_speed_test.csv')
         
         num_warmup = 5
-        num_test = 100
+        num_test = 5
         total_iter = num_warmup + num_test
         
         def fmt(val):

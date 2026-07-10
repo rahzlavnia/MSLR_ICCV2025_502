@@ -202,17 +202,24 @@ def seq_speed_test(loader, model, device):
     for batch_idx, data in enumerate(loader):
         data = device.dict_data_to_device(data)  
         batch_sequences = len(data['origin_info'])
-        data['skip_decoding'] = True 
+        
+        data['skip_decoding'] = True # Do not decode during forward pass
         
         with torch.no_grad():
+            # W/O Decoding Forward Pass
             torch.cuda.synchronize()
             start_time_wo = time.time()
-            ret_dict = model(data)
+            ret_dict = model(data)  # Forward pass tanpa gradien dan tanpa decoding
             torch.cuda.synchronize()
             end_time_wo = time.time()
             
+            # W/ Decoding = W/O Decoding time + Decoding Time
             real_model = model.module if isinstance(model, torch.nn.DataParallel) else model
             
+            # Explicit Decoding
+            conv_sents_fusion = real_model.decoder.decode(
+                ret_dict['conv_logits_fusion'] * real_model.norm_scale, ret_dict['feat_len'], batch_first=False, probs=False
+            )
             start_time_decoding = time.time()
             recognized_sents_fusion = real_model.decoder.decode(
                 ret_dict['seq_logits_fusion'] * real_model.norm_scale, ret_dict['feat_len'], batch_first=False, probs=False
