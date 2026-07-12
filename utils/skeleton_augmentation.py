@@ -56,32 +56,69 @@ class ToTensor(object):
             skeleton = torch.tensor(skeleton, dtype=torch.float32)
         return skeleton
 
-
 class Downsample(object):
-    """Standalone  downsampling (decoupled from augmentation).
+    """Temporal downsampling using predefined frame skipping patterns.
 
-    Picks every ``step``-th frame, where ``step = round(1 / ratio)``. For the
-    default ``ratio=0.5`` this keeps every other frame (step 2), matching the
-    legacy ``::2`` behaviour that used to live inside the temporal augmentation
-    classes.
+    This transform reduces the number of frames by applying a deterministic
+    frame skipping pattern for each downsampling ratio.
+
+    Frame skipping patterns:
+        ratio = 1.0 : ✓
+        ratio = 0.8 : ✓ ✓ ✓ ✓ ✗
+        ratio = 0.5 : ✓ ✗
+        ratio = 0.3 : ✓ ✗ ✗ ✓ ✗ ✗ ✓ ✗ ✗ ✗
+        ratio = 0.2 : ✓ ✗ ✗ ✗ ✗
+
+    During training (random_offset=True), the pattern starts from either
+    offset 0 or 1, matching the behavior of the previous implementation.
+    During evaluation (random_offset=False), the pattern always starts from
+    offset 0 to ensure deterministic results.
 
     Args:
-        ratio (float): Fraction of frames to keep (0.5 -> keep half).
-        random_offset (bool): If True, randomly start at frame 0 or 1 (the
-            legacy train behaviour). If False, always start at 0 (the legacy
-            test behaviour).
+        ratio (float):
+            Fraction of frames to retain.
+            Supported values are {1.0, 0.8, 0.5, 0.3, 0.2}.
+
+        random_offset (bool):
+            If True, randomly shifts the starting position of the frame
+            skipping pattern by 0 or 1 (legacy training behavior).
+            If False, always starts from the first frame (legacy testing
+            behavior).
     """
 
-    def __init__(self, ratio=0.5, random_offset=True) -> None:
-        self.step = max(1, int(round(1.0 / ratio)))
+    PATTERNS = {
+        1.0: [1],
+        0.8: [1, 1, 1, 1, 0],
+        0.5: [1, 0],
+        0.3: [1, 0, 0, 1, 0, 0, 1, 0, 0, 0],
+        0.2: [1, 0, 0, 0, 0],
+    }
+
+    def __init__(self, ratio=0.5, random_offset=True):
+
+        if ratio not in self.PATTERNS:
+            raise ValueError(
+                f"Unsupported ratio: {ratio}. "
+                f"Supported ratios: {list(self.PATTERNS.keys())}"
+            )
+
+        self.pattern = self.PATTERNS[ratio]
         self.random_offset = random_offset
 
     def __call__(self, clip, **kwargs):
+
         if self.random_offset:
-            start_idx = 0 if random.uniform(0, 1) > 0.5 else 1
+            offset = 0 if random.uniform(0, 1) > 0.5 else 1
         else:
-            start_idx = 0
-        index = list(range(start_idx, len(clip), self.step))
+            offset = 0
+
+        pattern_length = len(self.pattern)
+
+        index = [
+            i for i in range(len(clip))
+            if self.pattern[(i + offset) % pattern_length]
+        ]
+
         return clip[index]
 
 
